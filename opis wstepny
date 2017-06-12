@@ -1,3 +1,8 @@
 Gra "apteka na wesolo" czyli interaktywne dowcipy z pracy w aptece.
-Aplikacja okienkowa WPF.menu,przyjmujaca wybory od uzytkownika i reagujaca odpowiednio.
-Emulacja dialogow,zabawnych sytuacji, i pokreconej wyobrazni.
+Aplikacja okienkowa WPF, przyjmujaca wybory od uzytkownika i reagujaca odpowiednio.
+Opcje:
+-losowanie "dowcipu dnia"
+-wyszukiwanie w słowniku przekręconych nazw leków
+-"przeżyj to sam" czyli co zrobiłbyś w tej sytuacji -> emulacja dialogow,zabawnych sytuacji
+(gra wyboru - wybieranie z możliwych opcji przy zmieniającej się sytuacji)
+(jak dam radę to jeszcze okraszone animacjami)
