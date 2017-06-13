@@ -1,8 +1,16 @@
-Gra "apteka na wesolo" czyli interaktywne dowcipy z pracy w aptece.
-Aplikacja okienkowa WPF, przyjmujaca wybory od uzytkownika i reagujaca odpowiednio.
-Opcje:
--losowanie "dowcipu dnia"
--wyszukiwanie w słowniku przekręconych nazw leków
--"przeżyj to sam" czyli co zrobiłbyś w tej sytuacji -> emulacja dialogow,zabawnych sytuacji
-(gra wyboru - wybieranie z możliwych opcji przy zmieniającej się sytuacji)
-(jak dam radę to jeszcze okraszone animacjami)
+kalendarz interaktywny dla młodych rodziców(wstępnie dla dzieci od 0-12miesięcy):
+po zalogowaniu dziecka - podaniu daty urodzenia, ew wieku w tygodniach lub miesiącach poinformuje:
+-aktualnym wieku(jak ktoś ma problem z przeliczeniem tygodni na miesiące;)) w tygodniach i miesiącach
+-o najbliższym terminie szczepień
+-o dacie kolejnego bilansu dziecka
+-poda opis co dziecko powinno potrafić w tym czasie-przydatne jeśli są odstęstwa -powód by konsultować się z pediatrą lub rehabilitantem.
+-proponowane zabawy dostosowane do wieku dziecka
+
+przy wyborze opcji żywienie dziecka będzie:
+-proponować czym można rozszerzać dietę dziecka - jeśli jest w wieku gdy można ją rozszerzać
+-propozycje kombinacji składników pożywienia
+-jeśli dziecko jest karmione naturalnie będzie przypominać co 3h(w nocy co 4h)o konieczności karmienia oraz informacja z której piersi
+(o czym matki karmiące potrafią zapominać)
+
+aplikacja wpf ale planuję oddzielić logikę od UI by można było ją przenieść na aplikację webową lub docelowo app na smartphona.
+
