@@ -39,15 +39,15 @@ namespace interactiveCalendareForParents
                 feeding += "Introducing groucery mousse in Manna gruel once a day.";
 
             if (child.AgeInMonths > 6 && child.AgeInMonths <= 9)
-                feeding += "Extending the childs diet should consist of:\n"+
+                feeding += "Extending " +child.Name+ " diet should consist of:\n" +
                "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.";
 
             if (child.AgeInMonths == 10)
-                feeding += "Extending the childs diet should consist of:\n" +
+                feeding += "Extending " + child.Name + " diet should consist of:\n" +
                "1.Vegetable soup with gluten gruel,vegetables with boiled meat,half of yolk everyday.\n2.porridge,biscuits,bread,rusks.\n3.Purée from fruit or fruit juice.";
 
             if (child.AgeInMonths > 10)
-                feeding += "Extending the childs diet should consist of:\n" +
+                feeding += "Extending " + child.Name + " diet should consist of:\n" +
              "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice3-4times a week a whole egg.\n" +
              "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
                   "3.Purée from fruit or fruit juice.";
