@@ -20,7 +20,7 @@ namespace interactiveCalendareForParents
             {
                
                Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
-               Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Quit:");
+               Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Quit:");
                string answer = Console.ReadLine();
                isOn= evaluateAnswer(answer);
                 
@@ -40,8 +40,11 @@ namespace interactiveCalendareForParents
                 case "3":
                     readFeedingDetails();
                     break;
-                case "4":
+                case "5":
                     isOn = false;
+                    break;
+                case "4":
+                    getVaccinationPlan();
                     break;
                 default:
                     break;
@@ -55,13 +58,23 @@ namespace interactiveCalendareForParents
             return isOn;
         }
 
-      
+       
+
         private static void initializeBaby()
         {
             Console.WriteLine("Enter babys name: ");
             string name = Console.ReadLine();
             Console.WriteLine("Enter babys birthday(year.month.day): ");
-            DateTime birthday = DateTime.Parse(Console.ReadLine());
+            DateTime birthday;
+            try
+            {
+                 birthday = DateTime.Parse(Console.ReadLine());
+            }
+            catch (FormatException fe)
+            {
+                Console.WriteLine("You've entered an invalid date format. Try again.");
+                return;
+            }
             Console.WriteLine("Is the baby Breastfead?(Y/N?):");
             string answer2 = Console.ReadLine();
             bool breastfead = false;
@@ -82,6 +95,10 @@ namespace interactiveCalendareForParents
             _feedingPlan = new FeedingPlan(baby);
             Console.WriteLine(_feedingPlan.feeding);
             Console.ReadLine();
+        }
+        private static void getVaccinationPlan()
+        {
+            throw new NotImplementedException();
         }
     }
 }
