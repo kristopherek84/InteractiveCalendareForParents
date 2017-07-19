@@ -34,19 +34,20 @@ namespace interactiveCalendareForParents
             //feedingPlan.Add(11, feeding + " 1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice3-4times a week a whole egg." +
             //     " 2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week)." +
             //          " 3.Purée from fruit or fruit juice");
-            if (child.AgeInMonths <= 6)            
+            
+            if (child.AgeInMonths <= 6 && child.AgeInMonths > 4)            
                 feeding += "Introducing groucery mousse in Manna gruel once a day.";
 
             if (child.AgeInMonths > 6 && child.AgeInMonths <= 9)
-                feeding +=
+                feeding += "Extending the childs diet should consist of:\n"+
                "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.";
 
             if (child.AgeInMonths == 10)
-                feeding +=
+                feeding += "Extending the childs diet should consist of:\n" +
                "1.Vegetable soup with gluten gruel,vegetables with boiled meat,half of yolk everyday.\n2.porridge,biscuits,bread,rusks.\n3.Purée from fruit or fruit juice.";
 
             if (child.AgeInMonths > 10)
-                feeding +=
+                feeding += "Extending the childs diet should consist of:\n" +
              "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice3-4times a week a whole egg.\n" +
              "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
                   "3.Purée from fruit or fruit juice.";

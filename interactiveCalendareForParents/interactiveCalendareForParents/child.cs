@@ -19,7 +19,7 @@ namespace interactiveCalendareForParents
         {
             this.Name = name;
             this.AgeInMonths =(int)DateTime.Now.Subtract(birthday).TotalDays/30;
-            this.AgeInWeeks = AgeInMonths * 4;
+            this.AgeInWeeks = (int)DateTime.Now.Subtract(birthday).TotalDays / 7;
             isBreastfead = breastfead;
         }
       

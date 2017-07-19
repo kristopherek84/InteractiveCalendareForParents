@@ -28,19 +28,21 @@ namespace interactiveCalendareForParents
                         DateTime birthday = DateTime.Parse(Console.ReadLine());
                         Console.WriteLine("Is the baby Breastfead?(Y/N?):");
                         string answer2 = Console.ReadLine();
-                        bool breastfead=false;
-                        if (answer2 == "Y" || answer2 == "y") {  breastfead = true; }
-                        if (answer2 == "N" || answer2 == "n") {  breastfead = false; }
-                        Child baby = new Child(name, birthday,breastfead);
+                        bool breastfead = false;
+                        if (answer2 == "Y" || answer2 == "y") { breastfead = true; }
+                        if (answer2 == "N" || answer2 == "n") { breastfead = false; }
+                        Child baby = new Child(name, birthday, breastfead);
                         hasntBeenInitialized = false;
                         Console.WriteLine("The Baby's Name is {2}, its {0} months old, witch is {1} weeks old",
                             baby.AgeInMonths, baby.AgeInWeeks, baby.Name);
-                       
+
                         Feeding babyFeeding = new Feeding(baby);
                         Console.WriteLine(babyFeeding.feeding);
                         // Console.ReadLine();
+                        continue;
                     }
-                    if (answer == "2") { hasntBeenInitialized = false; return; }
+                    else if (answer == "2") { isOn = false; return; }
+                    else continue;
                 }               
                
 
