@@ -11,7 +11,8 @@ namespace interactiveCalendareForParents
         public string Name { get; set; }
         public int AgeInWeeks { get; set; }
         public int AgeInMonths { get; set; }
-         
+
+        Feeding _feedingPlan;
 
         public Child(string name, DateTime birthday)
         {

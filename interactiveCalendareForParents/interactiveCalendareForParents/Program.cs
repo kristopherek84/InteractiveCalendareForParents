@@ -17,7 +17,7 @@ namespace interactiveCalendareForParents
                 if (hasntBeenInitialized)
                 {
                     Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
-                    Console.Write("1) New Baby: /n 2)Quit:");
+                    Console.WriteLine("1) New Baby: \n 2)Quit:");
                     string answer = Console.ReadLine();
                     if (answer == "1")
                     {
@@ -27,6 +27,8 @@ namespace interactiveCalendareForParents
                         DateTime birthday = DateTime.Parse(Console.ReadLine());
                         Child baby = new Child(name, birthday);
                         hasntBeenInitialized = false;
+                        Console.Write("The Baby's Name is {2}, its {0} months old, witch is {1} weeks old",
+                            baby.AgeInMonths,baby.AgeInWeeks,baby.Name);
                     }
                     if(answer == "2") { hasntBeenInitialized = false; return; }
                 }
