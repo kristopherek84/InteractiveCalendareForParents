@@ -25,7 +25,8 @@ namespace interactiveCalendareForParents
         public FeedingPlan(Child child)
         {
             _child = child;
-            _isBreastfead = child.isBreastfead;
+            _isBreastfead = askIfIsBreastfead();
+            
             feedingPlan = new Dictionary<int, string>();
             
             if (_isBreastfead)
@@ -36,6 +37,16 @@ namespace interactiveCalendareForParents
             choosingFeedingPlan();
            
 
+        }
+
+        private bool askIfIsBreastfead()
+        {
+            Console.WriteLine("Is the baby Breastfead?(Y/N?):");
+            string answer2 = Console.ReadLine();
+            bool breastfead = false;
+            if (answer2 == "Y" || answer2 == "y") { breastfead = true; }
+            else if (answer2 == "N" || answer2 == "n") { breastfead = false; }
+            return breastfead;
         }
 
         //private void populateDictionary()

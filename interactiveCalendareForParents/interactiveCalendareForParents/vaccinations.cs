@@ -12,12 +12,13 @@ namespace interactiveCalendareForParents
         bool _vaccinatedForFree;
         bool _vaccinCombo;
         //  bool _extraVaccinatians;
-        protected Child baby;
+        protected Child _baby;
         public string vaccinationPlan = "";
 
         public Vaccinations(Child baby)
         {
-            askForVaccinationPlan(baby);
+            _baby = baby;
+            askForVaccinationPlan(_baby);
             if (!_isVaccinated) vaccinationPlan = "Little baby coffins are not cheaper then free vaccines!!!!";
         }
 
@@ -33,7 +34,7 @@ namespace interactiveCalendareForParents
             Console.WriteLine("Are You Vaccinating Your baby?(Y/N):");
             string answer2 = Console.ReadLine();
             if (answer2 == "Y" || answer2 == "y") { _isVaccinated = true; }
-            if (answer2 == "N" || answer2 == "n") { _isVaccinated = false; }
+            else if (answer2 == "N" || answer2 == "n") { _isVaccinated = false; }
             else { Console.WriteLine("Please try again."); askIsVaccinated(); }
         }
         private void askWhatVaccinationPlan()
@@ -41,7 +42,7 @@ namespace interactiveCalendareForParents
             Console.WriteLine("Are You going with the free vaccination scheme or the paid combo version? (F/P):");
             string answer2 = Console.ReadLine();
             if (answer2 == "F" || answer2 == "f") { _vaccinatedForFree = true; _vaccinCombo = false; }
-            if (answer2 == "P" || answer2 == "p") { _vaccinCombo = true; _vaccinatedForFree = false; }
+            else if (answer2 == "P" || answer2 == "p") { _vaccinCombo = true; _vaccinatedForFree = false; }
             else { Console.WriteLine("Please try again."); askWhatVaccinationPlan(); }
         }
         private void chooseVaccinationPlan(Child baby)
@@ -67,7 +68,10 @@ baby.Name +
                    + baby.Name +
                  " should receve the second dose of the hepatitis B vaccine, as well as first against diphtheria, tetanus and pertussis (DTP), Haemophilus influenzae type b (Hib) bacteria and pneumococcal.";
             }
-            else vaccinationPlan += baby.Name + " is older then 12 months and should be past the first year vaccination plan.";
+            else if (baby.AgeInMonths <= 5 && _vaccinCombo) vaccinationPlan += "Between the age of 5 and 6 months " + baby.Name + " should receve the last 6 in 1 vaccine.";
+            else if (baby.AgeInMonths <= 3 && _vaccinCombo) vaccinationPlan += "Between the age of 3 and 4 months " + baby.Name + " should receve the second 6 in 1 vaccine.";
+            else if (baby.AgeInMonths <= 2 && _vaccinCombo) vaccinationPlan += "At the age of 2 months " + baby.Name + " should receve the first 6 in 1 vaccine.";
+            else vaccinationPlan += baby.Name + " is older then 7 months and should be past the first year vaccination plan.";
         }
     }
 }

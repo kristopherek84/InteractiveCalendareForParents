@@ -18,7 +18,7 @@ namespace interactiveCalendareForParents
             bool isOn = true;
             while (isOn)
             {
-               
+                Console.Clear();
                Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
                Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Quit:");
                string answer = Console.ReadLine();
@@ -75,12 +75,8 @@ namespace interactiveCalendareForParents
                 Console.WriteLine("You've entered an invalid date format. Try again.");
                 return;
             }
-            Console.WriteLine("Is the baby Breastfead?(Y/N?):");
-            string answer2 = Console.ReadLine();
-            bool breastfead = false;
-            if (answer2 == "Y" || answer2 == "y") { breastfead = true; }
-            if (answer2 == "N" || answer2 == "n") { breastfead = false; }
-            _baby = new Child(name, birthday, breastfead);
+           
+            _baby = new Child(name, birthday);
             
         }
         private static void getBabysAge()
@@ -98,6 +94,7 @@ namespace interactiveCalendareForParents
         }
         private static void getVaccinationPlan()
         {
+            _vaccinationPlan = new Vaccinations(_baby);
             Console.WriteLine(_vaccinationPlan.vaccinationPlan);
 
         }

@@ -12,15 +12,15 @@ namespace interactiveCalendareForParents
         public int AgeInWeeks { get; set; }
         public int AgeInMonths { get; set; }
 
-        public bool isBreastfead;
+       // public bool isBreastfead;
         // Feeding _feedingPlan;
 
-        public Child(string name, DateTime birthday,bool breastfead)
+        public Child(string name, DateTime birthday)
         {
             this.Name = name;
             this.AgeInMonths =(int)DateTime.Now.Subtract(birthday).TotalDays/30;
             this.AgeInWeeks = (int)DateTime.Now.Subtract(birthday).TotalDays / 7;
-            isBreastfead = breastfead;
+           // isBreastfead = breastfead;
         }
       
     }
