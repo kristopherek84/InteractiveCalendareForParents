@@ -14,21 +14,41 @@ namespace interactiveCalendareForParents
 
         public static void Start()
         {
-            
+            bool stayOn = true;
             bool isOn = true;
             while (isOn)
             {
-                Console.Clear();
+               Console.Clear();
                Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
-               Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Quit:");
+                Console.WriteLine("1) New Baby: \n2) Quit:");
                string answer = Console.ReadLine();
-               isOn= evaluateAnswer(answer);
-                
+               isOn= evaluateAtSturtup(answer,out stayOn);
             }
+           
+            while (stayOn)
+            {
+                Console.Clear();
+                Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
+                Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Quit:");
+                string answer = Console.ReadLine();
+                stayOn = evaluateAnswer(answer);
+            }
+
         }
-             private static bool evaluateAnswer(string answer)
+
+        private static bool evaluateAtSturtup(string answer, out bool stayOn)
         {
+            stayOn = true;
             bool isOn = true;
+            if (answer == "1") { initializeBaby(); isOn = false; }
+            if (answer == "2") { isOn = false; stayOn = false; }
+           return isOn;
+
+        }
+
+        private static bool evaluateAnswer(string answer)
+        {
+            bool stayOn = true;
             switch (answer)
             {
                 case "1":
@@ -41,7 +61,7 @@ namespace interactiveCalendareForParents
                     readFeedingDetails();
                     break;
                 case "5":
-                    isOn = false;
+                    stayOn = false;
                     break;
                 case "4":
                     getVaccinationPlan();
@@ -55,7 +75,7 @@ namespace interactiveCalendareForParents
 
             //}
             //else if (answer == "2") { isOn = false; }
-            return isOn;
+            return stayOn;
         }
 
        

@@ -34,7 +34,7 @@ namespace interactiveCalendareForParents
             Console.WriteLine("Are You Vaccinating Your baby?(Y/N):");
             string answer2 = Console.ReadLine();
             if (answer2 == "Y" || answer2 == "y") { _isVaccinated = true; }
-            else if (answer2 == "N" || answer2 == "n") { _isVaccinated = false; }
+            else if (answer2 == "N" || answer2 == "n") { _isVaccinated = false;  return; }
             else { Console.WriteLine("Please try again."); askIsVaccinated(); }
         }
         private void askWhatVaccinationPlan()
