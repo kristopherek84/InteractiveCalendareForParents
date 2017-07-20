@@ -8,9 +8,9 @@ namespace interactiveCalendareForParents
 {
     class Menu
     {
-        protected static Child baby;
+        protected static Child _baby;
         protected  static FeedingPlan _feedingPlan;
-        //private Vaccinations vaccinationPlan;
+        protected static Vaccinations _vaccinationPlan;
 
         public static void Start()
         {
@@ -80,25 +80,26 @@ namespace interactiveCalendareForParents
             bool breastfead = false;
             if (answer2 == "Y" || answer2 == "y") { breastfead = true; }
             if (answer2 == "N" || answer2 == "n") { breastfead = false; }
-            baby = new Child(name, birthday, breastfead);
+            _baby = new Child(name, birthday, breastfead);
             
         }
         private static void getBabysAge()
         {
             Console.WriteLine("The Baby's Name is {2}, its {0} months old, witch is {1} weeks old",
-                     baby.AgeInMonths, baby.AgeInWeeks, baby.Name);
+                     _baby.AgeInMonths, _baby.AgeInWeeks, _baby.Name);
             Console.ReadLine();
         }
 
         private static void readFeedingDetails()
         {
-            _feedingPlan = new FeedingPlan(baby);
+            _feedingPlan = new FeedingPlan(_baby);
             Console.WriteLine(_feedingPlan.feeding);
             Console.ReadLine();
         }
         private static void getVaccinationPlan()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(_vaccinationPlan.vaccinationPlan);
+
         }
     }
 }

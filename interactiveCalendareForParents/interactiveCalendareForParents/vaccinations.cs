@@ -11,28 +11,63 @@ namespace interactiveCalendareForParents
         bool _isVaccinated;
         bool _vaccinatedForFree;
         bool _vaccinCombo;
-        bool _extraVaccinatians;
+        //  bool _extraVaccinatians;
+        protected Child baby;
+        public string vaccinationPlan = "";
 
-        string VaccinationPlan;
-
-        public Vaccinations()
+        public Vaccinations(Child baby)
         {
-            askForVaccinationPlan();
-            if (!_isVaccinated) VaccinationPlan = "Little baby coffins are not cheaper then free vaccines!!!!";
+            askForVaccinationPlan(baby);
+            if (!_isVaccinated) vaccinationPlan = "Little baby coffins are not cheaper then free vaccines!!!!";
         }
 
-        private void askForVaccinationPlan()
+        private void askForVaccinationPlan(Child baby)
+        {
+            askIsVaccinated();
+            askWhatVaccinationPlan();
+            chooseVaccinationPlan(baby);
+        }
+        
+        private void askIsVaccinated()
         {
             Console.WriteLine("Are You Vaccinating Your baby?(Y/N):");
             string answer2 = Console.ReadLine();
             if (answer2 == "Y" || answer2 == "y") { _isVaccinated = true; }
             if (answer2 == "N" || answer2 == "n") { _isVaccinated = false; }
-            else Console.WriteLine("Please try again.");
+            else { Console.WriteLine("Please try again."); askIsVaccinated(); }
+        }
+        private void askWhatVaccinationPlan()
+        {
             Console.WriteLine("Are You going with the free vaccination scheme or the paid combo version? (F/P):");
-            answer2 = Console.ReadLine();
-            if (answer2 == "F" || answer2 == "f") { _isVaccinated = true; }
-            if (answer2 == "P" || answer2 == "p") { _isVaccinated = false; }
-            else Console.WriteLine("Please try again.");
+            string answer2 = Console.ReadLine();
+            if (answer2 == "F" || answer2 == "f") { _vaccinatedForFree = true; _vaccinCombo = false; }
+            if (answer2 == "P" || answer2 == "p") { _vaccinCombo = true; _vaccinatedForFree = false; }
+            else { Console.WriteLine("Please try again."); askWhatVaccinationPlan(); }
+        }
+        private void chooseVaccinationPlan(Child baby)
+        {
+            if (baby.AgeInMonths <= 7 && _vaccinatedForFree) { vaccinationPlan += "At the age of 7 months " + baby.Name + " shoud receve third dose of vaccine against hepatitis B."; }
+            else if (baby.AgeInMonths <= 5 && _vaccinatedForFree)
+            {
+                vaccinationPlan += "Between the age of 5 and 6 months (6-8weeks after the last vaccination) " +
+baby.Name +
+" should receve the third dose of vaccination against diphtheria, tetanus and pertussis (DTP) , Haemophilus influenzae type b (Hib) and the second against polio.";
+            }
+            else if (baby.AgeInMonths <= 3 && _vaccinatedForFree)
+            {
+                vaccinationPlan += "Between the age of 3 and 4 months (6-8weeks after the last vaccination) "
++ baby.Name +
+" should receve the second dose of vaccination against diphtheria, tetanus and pertussis (DTP) , Haemophilus influenzae type b (Hib) bacteria and pneumococcal." +
+"At this age " + baby.Name + " should receve the first vaccinaton against acute severe childhood paralysis (poliomyelitis).";
+            }
+
+            else if (baby.AgeInMonths <= 2 && _vaccinatedForFree)
+            {
+                vaccinationPlan += "At the age of 2 months "
+                   + baby.Name +
+                 " should receve the second dose of the hepatitis B vaccine, as well as first against diphtheria, tetanus and pertussis (DTP), Haemophilus influenzae type b (Hib) bacteria and pneumococcal.";
+            }
+            else vaccinationPlan += baby.Name + " is older then 12 months and should be past the first year vaccination plan.";
         }
     }
 }
