@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace interactiveCalendareForParents
 {
-    class Child
+    class Baby
     {
         public string Name { get; set; }
         public int AgeInWeeks { get; set; }
@@ -15,7 +15,7 @@ namespace interactiveCalendareForParents
        // public bool isBreastfead;
         // Feeding _feedingPlan;
 
-        public Child(string name, DateTime birthday)
+        public Baby(string name, DateTime birthday)
         {
             this.Name = name;
             this.AgeInMonths =(int)DateTime.Now.Subtract(birthday).TotalDays/30;

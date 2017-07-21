@@ -8,7 +8,7 @@ namespace interactiveCalendareForParents
 {
     class Menu
     {
-        protected static Child _baby;
+        protected static Baby _baby;
         protected  static FeedingPlan _feedingPlan;
         protected static Vaccinations _vaccinationPlan;
 
@@ -96,7 +96,7 @@ namespace interactiveCalendareForParents
                 return;
             }
            
-            _baby = new Child(name, birthday);
+            _baby = new Baby(name, birthday);
             
         }
         private static void getBabysAge()

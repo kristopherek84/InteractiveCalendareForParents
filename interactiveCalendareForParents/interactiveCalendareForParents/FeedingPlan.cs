@@ -10,7 +10,7 @@ namespace interactiveCalendareForParents
     class FeedingPlan
     {
        private bool _isBreastfead;
-        protected Child _child;
+        protected Baby _baby;
 
         public string feeding = "The Baby should be: ";
         public enum age
@@ -22,9 +22,9 @@ namespace interactiveCalendareForParents
         };
         public Dictionary<int, string> feedingPlan;
 
-        public FeedingPlan(Child child)
+        public FeedingPlan(Baby child)
         {
-            _child = child;
+            _baby = child;
             _isBreastfead = askIfIsBreastfead();
             
             feedingPlan = new Dictionary<int, string>();
@@ -60,19 +60,19 @@ namespace interactiveCalendareForParents
         //}
         private void choosingFeedingPlan()
         {
-            if (_child.AgeInMonths <= 6 && _child.AgeInMonths > 4)
+            if (_baby.AgeInMonths <= 6 && _baby.AgeInMonths > 4)
                 feeding += "Introducing groucery mousse in Manna gruel once a day.";
 
-            if (_child.AgeInMonths > 6 && _child.AgeInMonths <= 9)
-                feeding += "Extending " + _child.Name + " diet should consist of:\n" +
+            if (_baby.AgeInMonths > 6 && _baby.AgeInMonths <= 9)
+                feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
                "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.";
 
-            if (_child.AgeInMonths == 10)
-                feeding += "Extending " + _child.Name + " diet should consist of:\n" +
+            if (_baby.AgeInMonths == 10)
+                feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
                "1.Vegetable soup with gluten gruel,vegetables with boiled meat,half of yolk everyday.\n2.porridge,biscuits,bread,rusks.\n3.Purée from fruit or fruit juice.";
 
-            if (_child.AgeInMonths > 10)
-                feeding += "Extending " + _child.Name + " diet should consist of:\n" +
+            if (_baby.AgeInMonths > 10)
+                feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
              "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice3-4times a week a whole egg.\n" +
              "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
                   "3.Purée from fruit or fruit juice.";
