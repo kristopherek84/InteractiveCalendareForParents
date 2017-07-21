@@ -19,7 +19,7 @@ namespace interactiveCalendareForParents
         {
             _baby = baby;
             askForVaccinationPlan(_baby);
-            if (!_isVaccinated) vaccinationPlan = "Little baby coffins are not cheaper then free vaccines!!!!";
+            if (!_isVaccinated) vaccinationPlan += "Little baby coffins are not cheaper then free vaccines!!!!";
         }
 
         private void askForVaccinationPlan(Child baby)

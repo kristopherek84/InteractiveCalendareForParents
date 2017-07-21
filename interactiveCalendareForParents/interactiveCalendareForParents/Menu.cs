@@ -116,6 +116,7 @@ namespace interactiveCalendareForParents
         {
             _vaccinationPlan = new Vaccinations(_baby);
             Console.WriteLine(_vaccinationPlan.vaccinationPlan);
+            Console.ReadLine();
 
         }
     }
