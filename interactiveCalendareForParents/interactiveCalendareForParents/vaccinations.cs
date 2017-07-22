@@ -48,14 +48,14 @@ namespace interactiveCalendareForParents
         }
         private void chooseVaccinationPlan(Baby baby)
         {
-            if (baby.AgeInMonths <= 7 && _vaccinatedForFree) { vaccinationPlan += "At the age of 7 months " + baby.Name + " shoud receve third dose of vaccine against hepatitis B."; }
+            if (baby.AgeInMonths > 5 && baby.AgeInMonths <= 7 && _vaccinatedForFree) { vaccinationPlan += "At the age of 7 months " + baby.Name + " shoud receve third dose of vaccine against hepatitis B."; }
             else if (baby.AgeInMonths <= 5 && _vaccinatedForFree)
             {
                 vaccinationPlan += "Between the age of 5 and 6 months (6-8weeks after the last vaccination) " +
 baby.Name +
 " should receve the third dose of vaccination against diphtheria, tetanus and pertussis (DTP) , Haemophilus influenzae type b (Hib) and the second against polio.";
             }
-            else if (baby.AgeInMonths <= 3 && _vaccinatedForFree)
+            else if (baby.AgeInMonths > 2 && baby.AgeInMonths <= 3 && _vaccinatedForFree)
             {
                 vaccinationPlan += "Between the age of 3 and 4 months (6-8weeks after the last vaccination) "
 + baby.Name +

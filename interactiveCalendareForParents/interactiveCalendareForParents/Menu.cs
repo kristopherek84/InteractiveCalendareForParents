@@ -11,6 +11,7 @@ namespace interactiveCalendareForParents
         protected static Baby _baby;
         protected  static FeedingPlan _feedingPlan;
         protected static Vaccinations _vaccinationPlan;
+        protected static DoctorsAppointments _doctorsAppointment;
 
         public static void Start()
         {
@@ -29,7 +30,7 @@ namespace interactiveCalendareForParents
             {
                 Console.Clear();
                 Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
-                Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Quit:");
+                Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Nearest Doctors Appointment: \n6)Quit:");
                 string answer = Console.ReadLine();
                 stayOn = evaluateAnswer(answer);
             }
@@ -61,24 +62,29 @@ namespace interactiveCalendareForParents
                     readFeedingDetails();
                     break;
                 case "5":
-                    stayOn = false;
+                    nearestDoctorsAppointment();
                     break;
                 case "4":
                     getVaccinationPlan();
                     break;
+                case "6":
+                    stayOn = false;
+                    break;
                 default:
                     break;
             }
-            //if (answer == "1")
-            //{
-            //    initializeBaby();
-
-            //}
-            //else if (answer == "2") { isOn = false; }
+           
             return stayOn;
         }
 
-       
+        private static void nearestDoctorsAppointment()
+        {
+            _doctorsAppointment = new DoctorsAppointments(_baby);
+            Console.WriteLine(_doctorsAppointment.nearestDoctorsAppointment);
+            Console.WriteLine("Press enter to continue.");
+            Console.ReadLine();
+
+        }
 
         private static void initializeBaby()
         {
@@ -90,7 +96,7 @@ namespace interactiveCalendareForParents
             {
                  birthday = DateTime.Parse(Console.ReadLine());
             }
-            catch (FormatException fe)
+            catch (FormatException )
             {
                 Console.WriteLine("You've entered an invalid date format. Try again.");
                 return;
@@ -103,6 +109,7 @@ namespace interactiveCalendareForParents
         {
             Console.WriteLine("The Baby's Name is {2}, its {0} months old, witch is {1} weeks old",
                      _baby.AgeInMonths, _baby.AgeInWeeks, _baby.Name);
+            Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
         }
 
@@ -110,12 +117,14 @@ namespace interactiveCalendareForParents
         {
             _feedingPlan = new FeedingPlan(_baby);
             Console.WriteLine(_feedingPlan.feeding);
+            Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
         }
         private static void getVaccinationPlan()
         {
             _vaccinationPlan = new Vaccinations(_baby);
             Console.WriteLine(_vaccinationPlan.vaccinationPlan);
+            Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
 
         }
