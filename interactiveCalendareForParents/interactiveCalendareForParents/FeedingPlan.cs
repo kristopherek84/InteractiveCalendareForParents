@@ -73,7 +73,7 @@ namespace interactiveCalendareForParents
 
             if (_baby.AgeInMonths > 10)
                 feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
-             "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice3-4times a week a whole egg.\n" +
+             "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice 3-4times a week a whole egg.\n" +
              "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
                   "3.Purée from fruit or fruit juice.";
         }
