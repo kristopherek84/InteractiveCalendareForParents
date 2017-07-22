@@ -12,6 +12,7 @@ namespace interactiveCalendareForParents
         protected  static FeedingPlan _feedingPlan;
         protected static Vaccinations _vaccinationPlan;
         protected static DoctorsAppointments _doctorsAppointment;
+        protected static Skills _babysSkills;
 
         public static void Start()
         {
@@ -30,7 +31,7 @@ namespace interactiveCalendareForParents
             {
                 Console.Clear();
                 Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
-                Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Nearest Doctors Appointment: \n6)Quit:");
+                Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Nearest Doctors Appointment: \n6)What can my baby do?: \n7)Quit:");
                 string answer = Console.ReadLine();
                 stayOn = evaluateAnswer(answer);
             }
@@ -68,6 +69,9 @@ namespace interactiveCalendareForParents
                     getVaccinationPlan();
                     break;
                 case "6":
+                    getBabysSkills();
+                break;
+                case "7":
                     stayOn = false;
                     break;
                 default:
@@ -75,6 +79,14 @@ namespace interactiveCalendareForParents
             }
            
             return stayOn;
+        }
+
+        private static void getBabysSkills()
+        {
+            _babysSkills = new Skills(_baby);
+            Console.WriteLine(_babysSkills.babySkills);
+            Console.WriteLine("Press enter to continue.");
+            Console.ReadLine();
         }
 
         private static void nearestDoctorsAppointment()

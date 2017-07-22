@@ -20,7 +20,7 @@ namespace interactiveCalendareForParents
 
       
 
-        private string getBabySkills()
+        private string getBabySkills(Baby _baby)
         {
             _babySkills = new string[] {
                 "It's time to feed! From the suggested menu I choose your food. \nOops, you will probably have to look in the diaper. Oh yes, now OK. \nTime to nap. Just be with me.",
