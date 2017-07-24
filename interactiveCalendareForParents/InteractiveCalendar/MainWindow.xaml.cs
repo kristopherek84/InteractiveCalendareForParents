@@ -23,9 +23,12 @@ namespace InteractiveCalendar
     {
         string name="";
         string birthday = "";
+        
+        static Program a;
         public MainWindow()
         {
             InitializeComponent();
+            a = new Program();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -40,20 +43,28 @@ namespace InteractiveCalendar
             
            //
         }
+        
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+           name = textBox.Text;
+          birthday = textBox1.Text;
+            if (name!="" && birthday != "")
+            {
+                
+                a.initializeBaby(name,DateTime.Parse( birthday));
+                displayBox.Text = a.getBabysAge();
+            }
+        }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-           name = textBox.Text;
-            birthday = textBox1.Text;
+           
         }
 
-        private void button2_Click(object sender, RoutedEventArgs e)
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(name!="" && birthday != "")
-            {
-                Program a = new Program();
-                Program.initializeBaby(name,DateTime.Parse( birthday));
-            }
+            
+
         }
     }
 }
