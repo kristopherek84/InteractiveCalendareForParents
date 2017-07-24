@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace interactiveCalendareForParents
 {
   
-    class FeedingPlan
+    public class FeedingPlan
     {
        private bool _isBreastfead;
         protected Baby _baby;

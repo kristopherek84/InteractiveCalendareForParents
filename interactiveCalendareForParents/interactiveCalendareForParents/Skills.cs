@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace interactiveCalendareForParents
 {
-    class Skills
+    public class Skills
     {
         protected Baby _baby;
         private string[] _babySkills;

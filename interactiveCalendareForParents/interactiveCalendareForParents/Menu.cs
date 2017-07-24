@@ -6,32 +6,38 @@ using System.Threading.Tasks;
 
 namespace interactiveCalendareForParents
 {
-    class Menu
+    public class Menu
     {
-        protected static Baby _baby;
-        protected  static FeedingPlan _feedingPlan;
-        protected static Vaccinations _vaccinationPlan;
-        protected static DoctorsAppointments _doctorsAppointment;
-        protected static Skills _babysSkills;
+        static Baby _baby;
+        static FeedingPlan _feedingPlan;
+        static Vaccinations _vaccinationPlan;
+        static DoctorsAppointments _doctorsAppointment;
+        static Skills _babysSkills;
+        public static string name   = "Interactive Callendar For Parents Of Newborns and Infint Children";
 
-        public static void Start()
+
+        public static void Startup(bool isOn = true)
         {
             bool stayOn = true;
-            bool isOn = true;
+           
             while (isOn)
             {
-               Console.Clear();
-               Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
+                Console.Clear();
+                Console.WriteLine(name);
                 Console.WriteLine("1) New Baby: \n2) Quit:");
-               string answer = Console.ReadLine();
-               isOn= evaluateAtSturtup(answer,out stayOn);
+                string answer = Console.ReadLine();
+                isOn = evaluateAtSturtup(answer, out stayOn);
+                if (stayOn) { KeepRunning(); }
             }
-           
+        }
+        public static void KeepRunning()
+        {
+            bool stayOn = true;
             while (stayOn)
             {
                 Console.Clear();
-                Console.WriteLine("Interactive Callendar For Parents Of Newborns and Infint Children");
-                Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Nearest Doctors Appointment: \n6)What can my baby do?: \n7)Quit:");
+                Console.WriteLine(name);
+                Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Nearest Doctors Appointment: \n6) What can my baby do?: \n7)Quit:");
                 string answer = Console.ReadLine();
                 stayOn = evaluateAnswer(answer);
             }

@@ -10,7 +10,7 @@ namespace interactiveCalendareForParents
     {
         static void Main(string[] args)
         {
-            Menu.Start();
+            Menu.Startup();
           
         }
 

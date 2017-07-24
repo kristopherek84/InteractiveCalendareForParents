@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace interactiveCalendareForParents
 {
-    class Vaccinations
+    public class Vaccinations
     {
         bool _isVaccinated;
         bool _vaccinatedForFree;
@@ -26,7 +26,7 @@ namespace interactiveCalendareForParents
         {
             askIsVaccinated();
             askWhatVaccinationPlan();
-            if (!_isVaccinated) vaccinationPlan += "Little baby coffins are not cheaper then free vaccines!!!!";
+            if (!_isVaccinated) vaccinationPlan += "Little baby coffins are not cheaper then free vaccines!!!!\n";
             chooseVaccinationPlan(baby);
         }
         
@@ -53,13 +53,13 @@ namespace interactiveCalendareForParents
             {
                 vaccinationPlan += "Between the age of 5 and 6 months (6-8weeks after the last vaccination) " +
 baby.Name +
-" should receve the third dose of vaccination against \ndiphtheria, tetanus and pertussis (DTP) , Haemophilus influenzae type b (Hib) and the second against polio.";
+" should receve \nthe third dose of vaccination against diphtheria, tetanus and pertussis (DTP) , Haemophilus influenzae type b (Hib) \nand the second against polio.";
             }
             else if (baby.AgeInMonths > 2 && baby.AgeInMonths <= 3 && _vaccinatedForFree)
             {
                 vaccinationPlan += "Between the age of 3 and 4 months (6-8weeks after the last vaccination) "
 + baby.Name +
-" should receve the second dose of vaccination against \ndiphtheria, tetanus and pertussis (DTP) , Haemophilus influenzae type b (Hib) bacteria and pneumococcal.\n" +
+" should receve \nthe second dose of vaccination against diphtheria, tetanus and pertussis (DTP) , Haemophilus influenzae type b (Hib) bacteria and pneumococcal.\n" +
 "At this age " + baby.Name + " should receve the first vaccinaton against acute severe childhood paralysis (poliomyelitis).";
             }
 
@@ -67,7 +67,7 @@ baby.Name +
             {
                 vaccinationPlan += "At the age of 2 months "
                    + baby.Name +
-                 " should receve the second dose of the hepatitis B vaccine, as well as first against \ndiphtheria, tetanus and pertussis (DTP), Haemophilus influenzae type b (Hib) bacteria and pneumococcal.";
+                 " should receve \nthe second dose of the hepatitis B vaccine, as well as first against diphtheria, \ntetanus and pertussis (DTP), Haemophilus influenzae type b (Hib) bacteria and pneumococcal.";
             }
             else if (baby.AgeInMonths <= 5 && _vaccinCombo) vaccinationPlan += "Between the age of 5 and 6 months " + baby.Name + " should receve the last 6 in 1 vaccine.";
             else if (baby.AgeInMonths <= 3 && _vaccinCombo) vaccinationPlan += "Between the age of 3 and 4 months " + baby.Name + " should receve the second 6 in 1 vaccine.";

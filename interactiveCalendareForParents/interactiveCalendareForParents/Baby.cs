@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace interactiveCalendareForParents
 {
-    class Baby
+    public class Baby
     {
         public string Name { get; set; }
         public int AgeInWeeks { get; set; }
