@@ -29,8 +29,12 @@ namespace InteractiveCalendar
         {
             InitializeComponent();
             a = new Program();
-        }
+            listBox.IsEnabled=false;
+            textBox.IsEnabled = false;
+            datePicker.IsEnabled = false;
 
+        }
+    
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -38,22 +42,28 @@ namespace InteractiveCalendar
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            textBox.Text = "Enter Baby's name: ";
-            textBox1.Text = "Enter Baby's birthday(year.month.day): ";
-            
-           //
+            label.Content = "Enter Baby's name: ";
+            label1.Content = "Enter Baby's birthday\n(year.month.day): ";
+            datePicker.IsEnabled = true;
+            textBox.IsEnabled = true;
+            //
         }
         
         private void button2_Click(object sender, RoutedEventArgs e)
         {
            name = textBox.Text;
-          birthday = textBox1.Text;
+          birthday = datePicker.Text;
             if (name!="" && birthday != "")
             {
                 
                 a.initializeBaby(name,DateTime.Parse( birthday));
                 displayBox.Text = a.getBabysAge();
+                listBox.IsEnabled = true;
+                label.Content = "";
+                label1.Content = "";
             }
+           
+            
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -61,10 +71,34 @@ namespace InteractiveCalendar
            
         }
 
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+           // displayBox.Text = "";
+        }
 
+        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
+            displayBox.Text = a.getFeedingPlan();
+        }
+
+        private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
+        {
+            displayBox.Text = a.getVaccinationPlan();
+        }
+
+        private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
+        {
+            displayBox.Text = a.getBabysAge();
+        }
+
+        private void ListBoxItem_Selected_3(object sender, RoutedEventArgs e)
+        {
+            displayBox.Text = a.getNearestDoctorsAppointment();
+        }
+
+        private void ListBoxItem_Selected_4(object sender, RoutedEventArgs e)
+        {
+            displayBox.Text = a.getBabysSkills();
         }
     }
 }

@@ -12,14 +12,25 @@
             <RowDefinition Height="41*"/>
         </Grid.RowDefinitions>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="3" Margin="517,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="0"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="28" Margin="40,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="textBox_TextChanged"/>
-        <Button x:Name="button2" Content="Enter" HorizontalAlignment="Left" Height="36" Margin="40,0,0,0" VerticalAlignment="Top" Width="91" Click="button2_Click" Grid.Row="1"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="51" Margin="40,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="textBox1_TextChanged"/>
-        <TextBox x:Name="displayBox" HorizontalAlignment="Left" Height="45" Margin="40,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="421" Grid.Row="1"/>
-        <Menu x:Name="menu1" HorizontalAlignment="Left" Height="47" VerticalAlignment="Top" Width="497" Margin="10,0,0,0">
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="28" Margin="174,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="textBox_TextChanged"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Height="33" Margin="174,85,0,0" VerticalAlignment="Top" Width="143"/>
+        
+        <Button x:Name="button2" Content="Enter" HorizontalAlignment="Left" Height="36" Margin="10,0,0,0" VerticalAlignment="Top" Width="91" Click="button2_Click" Grid.Row="1"/>
+        <TextBox x:Name="displayBox" HorizontalAlignment="Left" Height="113" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="497" Grid.Row="1"/>
+        <Menu x:Name="menu1" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="515" Margin="2,0,0,0">
             <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="74" Click="button_Click" RenderTransformOrigin="-1.763,-2.186"/>
             <Button x:Name="button1" Content="Quit" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="93" Click="button1_Click"/>
         </Menu>
+        <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="28" Margin="10,52,0,0" VerticalAlignment="Top" Width="146"/>
+        <Label x:Name="label1" Content="" HorizontalAlignment="Left" Height="51" Margin="10,85,0,0" VerticalAlignment="Top" Width="146"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="84" Margin="358,52,0,0" VerticalAlignment="Top" Width="149" SelectionChanged="listBox_SelectionChanged">
+            <ListBoxItem Content="Feeding Plan" Selected="ListBoxItem_Selected"/>
+            <ListBoxItem Content="Vaccinations" Selected="ListBoxItem_Selected_1"/>
+            <ListBoxItem Content="Doctors Appointments" Selected="ListBoxItem_Selected_3"/>
+            <ListBoxItem Content="Baby's Age" Selected="ListBoxItem_Selected_2"/>
+            <ListBoxItem Content="What can my baby do?" Selected="ListBoxItem_Selected_4"/>
+        </ListBox>
+       
 
     </Grid>
 </Window>
