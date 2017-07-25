@@ -8,13 +8,13 @@
         Title="Interactive Callendar For Parents Of Newborns and Infint Children" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="39*"/>
-            <RowDefinition Height="41*"/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Menu x:Name="menu" HorizontalAlignment="Left" Height="3" Margin="517,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="0"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="28" Margin="174,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="textBox_TextChanged"/>
         <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Height="33" Margin="174,85,0,0" VerticalAlignment="Top" Width="143"/>
-        
+
         <Button x:Name="button2" Content="Enter" HorizontalAlignment="Left" Height="36" Margin="10,0,0,0" VerticalAlignment="Top" Width="91" Click="button2_Click" Grid.Row="1"/>
         <TextBox x:Name="displayBox" HorizontalAlignment="Left" Height="113" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="497" Grid.Row="1"/>
         <Menu x:Name="menu1" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="515" Margin="2,0,0,0">
@@ -30,7 +30,10 @@
             <ListBoxItem Content="Baby's Age" Selected="ListBoxItem_Selected_2"/>
             <ListBoxItem Content="What can my baby do?" Selected="ListBoxItem_Selected_4"/>
         </ListBox>
-       
+        <CheckBox x:Name="checkBox" Content="Is Vaccinated" HorizontalAlignment="Left" Height="60" Margin="174,118,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox_Checked" Grid.RowSpan="2"/>
+        <RadioButton x:Name="radioButton" HorizontalAlignment="Left" Height="20" Margin="174,140,0,0" VerticalAlignment="Top" Width="143" Content="Is vaccinated for free" Checked="radioButton_Checked"/>
+        <RadioButton x:Name="radioButton1" Content="Paid Vaccine Combo" HorizontalAlignment="Left" Height="18" Margin="174,0,0,0" VerticalAlignment="Top" Width="143" Grid.Row="1" Checked="radioButton1_Checked"/>
+
 
     </Grid>
 </Window>

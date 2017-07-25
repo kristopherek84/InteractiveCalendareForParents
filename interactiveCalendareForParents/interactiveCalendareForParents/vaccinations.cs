@@ -21,7 +21,14 @@ namespace interactiveCalendareForParents
             askForVaccinationPlan(_baby);
          
         }
-
+        public Vaccinations(Baby baby,bool isVaccinated,bool vaccinatedForFree, bool vaccinCombo)
+        {
+            _baby = baby;
+            _isVaccinated = isVaccinated;
+            _vaccinCombo = vaccinCombo;
+            if (!_isVaccinated) vaccinationPlan += "Little baby coffins are not cheaper then free vaccines!!!!\n";
+            chooseVaccinationPlan(baby);
+        }
         private void askForVaccinationPlan(Baby baby)
         {
             askIsVaccinated();

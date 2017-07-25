@@ -23,7 +23,11 @@ namespace InteractiveCalendar
     {
         string name="";
         string birthday = "";
+        string option = "";
         
+        bool isVaccinated=false,vaccinatedForFree=false, vaccinCombo=false;
+
+
         static Program a;
         public MainWindow()
         {
@@ -73,32 +77,53 @@ namespace InteractiveCalendar
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           // displayBox.Text = "";
+            displayBox.Text = option;
         }
 
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
-            displayBox.Text = a.getFeedingPlan();
+            displayBox.Text = "";
+            option = a.getFeedingPlan();
         }
 
         private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
         {
-            displayBox.Text = a.getVaccinationPlan();
+            displayBox.Text = "";
+            //checkBox.IsEnabled = true;
+            option= a.getVaccinationPlan(isVaccinated, vaccinatedForFree, vaccinCombo);
         }
 
         private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
         {
-            displayBox.Text = a.getBabysAge();
+            displayBox.Text = "";
+            option = a.getBabysAge();
         }
 
         private void ListBoxItem_Selected_3(object sender, RoutedEventArgs e)
         {
-            displayBox.Text = a.getNearestDoctorsAppointment();
+            displayBox.Text = "";
+            option = a.getNearestDoctorsAppointment();
         }
 
         private void ListBoxItem_Selected_4(object sender, RoutedEventArgs e)
         {
-            displayBox.Text = a.getBabysSkills();
+            displayBox.Text = "";
+            option = a.getBabysSkills();
+        }
+
+        private void checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            isVaccinated = !isVaccinated;
+        }
+
+        private void radioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            vaccinatedForFree = !vaccinatedForFree;
+        }
+
+        private void radioButton1_Checked(object sender, RoutedEventArgs e)
+        {
+            vaccinCombo = !vaccinCombo;
         }
     }
 }

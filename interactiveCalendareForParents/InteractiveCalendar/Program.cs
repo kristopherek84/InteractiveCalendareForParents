@@ -30,9 +30,10 @@ namespace InteractiveCalendar
             _feedingPlan = new FeedingPlan(_baby);
             return _feedingPlan.feeding;
         }
-        public  string getVaccinationPlan()
+        public  string getVaccinationPlan(bool isVaccinated, bool vaccinatedForFree, bool vaccinCombo)
         {
-            _vaccinationPlan = new Vaccinations(_baby);
+          
+            _vaccinationPlan = new Vaccinations(_baby,isVaccinated,vaccinatedForFree,vaccinCombo);
              return _vaccinationPlan.vaccinationPlan;
         }
         public  string getNearestDoctorsAppointment()
@@ -45,5 +46,7 @@ namespace InteractiveCalendar
             _babysSkills = new Skills(_baby);
             return _babysSkills.babySkills;
         }
+
+       
     }
 }
