@@ -9,7 +9,7 @@ namespace interactiveCalendareForParents
   
     public class FeedingPlan
     {
-       private bool _isBreastfead;
+       private bool _isBreastfead=true;
         protected Baby _baby;
 
         public string feeding = "The Baby should be: ";
