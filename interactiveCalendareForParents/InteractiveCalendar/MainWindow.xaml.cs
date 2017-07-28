@@ -25,7 +25,7 @@ namespace InteractiveCalendar
         string birthday = "";
         string option = "";
         
-        bool isVaccinated=false,vaccinatedForFree=false, vaccinCombo=false;
+        bool isVaccinated=false,vaccinatedForFree=false, vaccinCombo=false, isBreastfead=false;
 
 
         static Program a;
@@ -83,7 +83,7 @@ namespace InteractiveCalendar
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
             displayBox.Text = "";
-            option = a.getFeedingPlan();
+            option = a.getFeedingPlan(isBreastfead);
         }
 
         private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
@@ -114,6 +114,11 @@ namespace InteractiveCalendar
         private void checkBox_Checked(object sender, RoutedEventArgs e)
         {
             isVaccinated = !isVaccinated;
+        }
+
+        private void checkBox1_Checked(object sender, RoutedEventArgs e)
+        {
+            isBreastfead = !isBreastfead;
         }
 
         private void radioButton_Checked(object sender, RoutedEventArgs e)

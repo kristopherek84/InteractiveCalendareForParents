@@ -12,7 +12,7 @@ namespace interactiveCalendareForParents
        private bool _isBreastfead=true;
         protected Baby _baby;
 
-        public string feeding = "The Baby should be: ";
+        public string feeding = "The Baby should be ";
         public enum age
         {
             to6months,
@@ -22,21 +22,32 @@ namespace interactiveCalendareForParents
         };
         public Dictionary<int, string> feedingPlan;
 
-        public FeedingPlan(Baby child)
+        public FeedingPlan(Baby baby)
         {
-            _baby = child;
+            _baby = baby;
             _isBreastfead = askIfIsBreastfead();
-            
-            feedingPlan = new Dictionary<int, string>();
-            
-            if (_isBreastfead)
-                feeding += "Breastfead on demand.\n";
-            else
-                feeding = "";
-          //  populateDictionary();
-            choosingFeedingPlan();
-           
 
+            //feedingPlan = new Dictionary<int, string>();
+
+            if (_isBreastfead)
+                feeding += "breastfead on demand.\n";
+            else
+                feeding += " fead modified milk on demand.";
+            
+            choosingFeedingPlan();
+       }
+        public FeedingPlan(Baby baby,bool isBreastfead)
+        {
+            _baby = baby;
+            _isBreastfead = isBreastfead;
+            feedingPlan = new Dictionary<int, string>();
+            if (_isBreastfead)
+                feeding += "breastfead on demand.\n";
+            else
+                feeding += " fead modified milk on demand.";
+
+            populateDictionary();
+            feeding = feedingPlan[_baby.AgeInMonths];
         }
 
         private bool askIfIsBreastfead()
@@ -49,23 +60,39 @@ namespace interactiveCalendareForParents
             return breastfead;
         }
 
-        //private void populateDictionary()
-        //{
-        //    feedingPlan.Add((int)age.to6months, feeding + " Introducing groucery mousse in Manna gruel once a day.");
-        //    feedingPlan.Add((int)age.to9months, feeding + " 1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk. 2.Manna gruel. 3.Juice puree");
-        //    feedingPlan.Add((int)age.to10months, feeding + " 1.Vegetable soup with gluten gruel,vegetables with boiled meat,half of yolk everyday.2.porridge,biscuits,bread,rusks.3.Purée from fruit or fruit juice");
-        //    feedingPlan.Add((int)age.to12months, feeding + " 1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice3-4times a week a whole egg." +
-        //         " 2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week)." +
-        //              " 3.Purée from fruit or fruit juice");
-        //}
+        private void populateDictionary()
+        {
+            feedingPlan.Add(0, feeding + " ");
+            feedingPlan.Add(1, feeding + " ");
+            feedingPlan.Add(2, feeding + " ");
+            feedingPlan.Add(3, feeding + " ");
+            feedingPlan.Add(4, feeding + " Introducing groucery mousse in Manna gruel once a day.");
+            feedingPlan.Add(5, feeding + " Introducing groucery mousse in Manna gruel once a day.");
+            feedingPlan.Add(6, feeding + " Introducing groucery mousse in Manna gruel once a day.");
+            feedingPlan.Add(7, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+               "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.");
+            feedingPlan.Add(8, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+              "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.");
+            feedingPlan.Add(9, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+              "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.");
+            feedingPlan.Add(10, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+               "1.Vegetable soup with gluten gruel,vegetables with boiled meat,half of yolk everyday.\n2.porridge,biscuits,bread,rusks.\n3.Purée from fruit or fruit juice.");
+            feedingPlan.Add(11, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+             "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice 3-4times a week a whole egg.\n" +
+             "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
+                  "3.Purée from fruit or fruit juice.");
+            feedingPlan.Add(12, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+             "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice 3-4times a week a whole egg.\n" +
+             "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
+                  "3.Purée from fruit or fruit juice.");
+        }
         private void choosingFeedingPlan()
         {
             if (_baby.AgeInMonths <= 6 && _baby.AgeInMonths > 4)
                 feeding += "Introducing groucery mousse in Manna gruel once a day.";
 
             if (_baby.AgeInMonths > 6 && _baby.AgeInMonths <= 9)
-                feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
-               "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.";
+               
 
             if (_baby.AgeInMonths == 10)
                 feeding += "Extending " + _baby.Name + " diet should consist of:\n" +

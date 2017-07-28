@@ -16,6 +16,7 @@ namespace InteractiveCalendar
         static DoctorsAppointments _doctorsAppointment;
         static Skills _babysSkills;
         public static string name = "Interactive Callendar For Parents Of Newborns and Infint Children";
+        
 
         public  void initializeBaby(string Name, DateTime birthday)
         {
@@ -25,9 +26,9 @@ namespace InteractiveCalendar
         {
             return "The Baby's Name is " + _baby.Name + ", its " + _baby.AgeInMonths + " months old, witch is " + _baby.AgeInWeeks + " weeks old";
         }
-        public  string getFeedingPlan()
+        public  string getFeedingPlan(bool isBreastfead)
         {
-            _feedingPlan = new FeedingPlan(_baby);
+            _feedingPlan = new FeedingPlan(_baby, isBreastfead);
             return _feedingPlan.feeding;
         }
         public  string getVaccinationPlan(bool isVaccinated, bool vaccinatedForFree, bool vaccinCombo)
