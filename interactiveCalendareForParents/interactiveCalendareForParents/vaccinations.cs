@@ -55,8 +55,9 @@ namespace interactiveCalendareForParents
         }
         private void chooseVaccinationPlan(Baby baby)
         {
-            if (baby.AgeInMonths > 5 && baby.AgeInMonths <= 7 && _vaccinatedForFree) { vaccinationPlan += "At the age of 7 months " + baby.Name + " shoud receve third dose of vaccine against hepatitis B."; }
-            else if (baby.AgeInMonths <= 5 && _vaccinatedForFree)
+            if (baby.AgeInMonths > 5 && baby.AgeInMonths <= 7 && _vaccinatedForFree)
+            { vaccinationPlan += "At the age of 7 months " + baby.Name + " shoud receve third dose of vaccine against hepatitis B."; }
+            else if (baby.AgeInMonths <= 5 && baby.AgeInMonths > 3 && _vaccinatedForFree)
             {
                 vaccinationPlan += "Between the age of 5 and 6 months (6-8weeks after the last vaccination) " +
 baby.Name +

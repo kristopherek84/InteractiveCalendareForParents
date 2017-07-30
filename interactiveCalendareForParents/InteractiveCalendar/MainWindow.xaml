@@ -34,6 +34,7 @@
         <RadioButton x:Name="radioButton" HorizontalAlignment="Left" Height="20" Margin="174,0,0,0" VerticalAlignment="Top" Width="143" Content="Is vaccinated for free" Checked="radioButton_Checked" Grid.Row="1"/>
         <RadioButton x:Name="radioButton1" Content="Paid Vaccine Combo" HorizontalAlignment="Left" Height="18" Margin="174,18,0,0" VerticalAlignment="Top" Width="143" Grid.Row="1" Checked="radioButton1_Checked"/>
         <CheckBox x:Name="checkBox1" Content="Is Breastfead" HorizontalAlignment="Left" Height="25" Margin="174,130,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox1_Checked"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="350" Margin="522,-25,-473,-5" Grid.RowSpan="2" VerticalAlignment="Top" Width="468"/>
 
 
     </Grid>

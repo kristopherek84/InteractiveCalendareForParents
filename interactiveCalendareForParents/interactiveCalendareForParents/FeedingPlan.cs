@@ -67,19 +67,19 @@ namespace interactiveCalendareForParents
             feedingPlan.Add(4, feeding + " Introducing groucery mousse in Manna gruel once a day.");
             feedingPlan.Add(5, feeding + " Introducing groucery mousse in Manna gruel once a day.");
             feedingPlan.Add(6, feeding + " Introducing groucery mousse in Manna gruel once a day.");
-            feedingPlan.Add(7, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+            feedingPlan.Add(7, feeding + "Extending " + _baby.Name + " diet should consist of:\n" +
                "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.");
-            feedingPlan.Add(8, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+            feedingPlan.Add(8, feeding + "Extending " + _baby.Name + " diet should consist of:\n" +
               "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.");
-            feedingPlan.Add(9, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+            feedingPlan.Add(9, feeding + "Extending " + _baby.Name + " diet should consist of:\n" +
               "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.");
-            feedingPlan.Add(10, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+            feedingPlan.Add(10, feeding + "Extending " + _baby.Name + " diet should consist of:\n" +
                "1.Vegetable soup with gluten gruel,vegetables with boiled meat,half of yolk everyday.\n2.porridge,biscuits,bread,rusks.\n3.Purée from fruit or fruit juice.");
-            feedingPlan.Add(11, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+            feedingPlan.Add(11, feeding + "Extending " + _baby.Name + " diet should consist of:\n" +
              "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice 3-4times a week a whole egg.\n" +
              "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
                   "3.Purée from fruit or fruit juice.");
-            feedingPlan.Add(12, feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+            feedingPlan.Add(12, feeding + "Extending " + _baby.Name + " diet should consist of:\n" +
              "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice 3-4times a week a whole egg.\n" +
              "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
                   "3.Purée from fruit or fruit juice.");
@@ -87,20 +87,33 @@ namespace interactiveCalendareForParents
         private void choosingFeedingPlan()
         {
             if (_baby.AgeInMonths <= 6 && _baby.AgeInMonths > 4)
-                feeding += "Introducing groucery mousse in Manna gruel once a day.";
+            { feeding += "Introducing groucery mousse in Manna gruel once a day.";
+                return;
+            }
 
             if (_baby.AgeInMonths > 6 && _baby.AgeInMonths <= 9)
-               
+            {
+                feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
+                 "1.Soup or vegetable mousse with boiled meat, gruel and every-over-day half of yolk.\n2.Manna gruel. \n3.Juice puree.";
+                return;
+            }
 
             if (_baby.AgeInMonths == 10)
+            {
                 feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
-               "1.Vegetable soup with gluten gruel,vegetables with boiled meat,half of yolk everyday.\n2.porridge,biscuits,bread,rusks.\n3.Purée from fruit or fruit juice.";
+                 "1.Vegetable soup with gluten gruel,vegetables with boiled meat,half of yolk everyday.\n2.porridge,biscuits,bread,rusks.\n3.Purée from fruit or fruit juice.";
+                return;
+            }
+
 
             if (_baby.AgeInMonths > 10)
+            {
                 feeding += "Extending " + _baby.Name + " diet should consist of:\n" +
              "1.Vegetable soup with gluten gruel,vegetables with boiled meat,potato,rice 3-4times a week a whole egg.\n" +
              "2.grain products(porridge,biscuits,bread,rusks) with milk products(cottage cheese, yogurt, kefir-several times a week).\n" +
                   "3.Purée from fruit or fruit juice.";
+                return;
+            }
         }
 
 
