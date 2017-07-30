@@ -27,8 +27,6 @@ namespace interactiveCalendareForParents
             _baby = baby;
             _isBreastfead = askIfIsBreastfead();
 
-            //feedingPlan = new Dictionary<int, string>();
-
             if (_isBreastfead)
                 feeding += "breastfead on demand.\n";
             else
