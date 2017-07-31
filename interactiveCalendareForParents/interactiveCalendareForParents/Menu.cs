@@ -13,7 +13,7 @@ namespace interactiveCalendareForParents
         static Vaccinations _vaccinationPlan;
         static DoctorsAppointments _doctorsAppointment;
         static Skills _babysSkills;
-        public static string name   = "Interactive Callendar For Parents Of Newborns and Infint Children";
+        public static string Name   = "Interactive Callendar For Parents Of Newborns and Infint Children";
 
 
         public static void Startup(bool isOn = true)
@@ -23,10 +23,10 @@ namespace interactiveCalendareForParents
             while (isOn)
             {
                 Console.Clear();
-                Console.WriteLine(name);
+                Console.WriteLine(Name);
                 Console.WriteLine("1) New Baby: \n2) Quit:");
                 string answer = Console.ReadLine();
-                isOn = evaluateAtSturtup(answer, out stayOn);
+                isOn = EvaluateAtSturtup(answer, out stayOn);
                 if (stayOn) { KeepRunning(); }
             }
         }
@@ -36,46 +36,46 @@ namespace interactiveCalendareForParents
             while (stayOn)
             {
                 Console.Clear();
-                Console.WriteLine(name);
+                Console.WriteLine(Name);
                 Console.WriteLine("1) New Baby: \n2) Get Age: \n3) Feedding details: \n4) Vaccination Plan: \n5) Nearest Doctors Appointment: \n6) What can my baby do?: \n7)Quit:");
                 string answer = Console.ReadLine();
-                stayOn = evaluateAnswer(answer);
+                stayOn = EvaluateAnswer(answer);
             }
 
         }
 
-        private static bool evaluateAtSturtup(string answer, out bool stayOn)
+        private static bool EvaluateAtSturtup(string answer, out bool stayOn)
         {
             stayOn = true;
             bool isOn = true;
-            if (answer == "1") { initializeBaby(); isOn = false; }
+            if (answer == "1") { InitializeBaby(); isOn = false; }
             if (answer == "2") { isOn = false; stayOn = false; }
            return isOn;
 
         }
 
-        private static bool evaluateAnswer(string answer)
+        private static bool EvaluateAnswer(string answer)
         {
             bool stayOn = true;
             switch (answer)
             {
                 case "1":
-                    initializeBaby();
+                    InitializeBaby();
                     break;
                 case "2":
-                    getBabysAge();
+                    GetBabysAge();
                     break;
                 case "3":
-                    readFeedingDetails();
+                    ReadFeedingDetails();
                     break;
                 case "5":
-                    nearestDoctorsAppointment();
+                    NearestDoctorsAppointment();
                     break;
                 case "4":
-                    getVaccinationPlan();
+                    GetVaccinationPlan();
                     break;
                 case "6":
-                    getBabysSkills();
+                    GetBabysSkills();
                 break;
                 case "7":
                     stayOn = false;
@@ -87,24 +87,24 @@ namespace interactiveCalendareForParents
             return stayOn;
         }
 
-        private static void getBabysSkills()
+        private static void GetBabysSkills()
         {
             _babysSkills = new Skills(_baby);
-            Console.WriteLine(_babysSkills.babySkills);
+            Console.WriteLine(_babysSkills.BabySkills);
             Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
         }
 
-        private static void nearestDoctorsAppointment()
+        private static void NearestDoctorsAppointment()
         {
             _doctorsAppointment = new DoctorsAppointments(_baby);
-            Console.WriteLine(_doctorsAppointment.nearestDoctorsAppointment);
+            Console.WriteLine(_doctorsAppointment.NearestDoctorsAppointment);
             Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
 
         }
 
-        private static void initializeBaby()
+        private static void InitializeBaby()
         {
             Console.WriteLine("Enter babys name: ");
             string name = Console.ReadLine();
@@ -123,7 +123,7 @@ namespace interactiveCalendareForParents
             _baby = new Baby(name, birthday);
             
         }
-        private static void getBabysAge()
+        private static void GetBabysAge()
         {
             Console.WriteLine("The Baby's Name is {2}, its {0} months old, witch is {1} weeks old",
                      _baby.AgeInMonths, _baby.AgeInWeeks, _baby.Name);
@@ -131,17 +131,17 @@ namespace interactiveCalendareForParents
             Console.ReadLine();
         }
 
-        private static void readFeedingDetails()
+        private static void ReadFeedingDetails()
         {
             _feedingPlan = new FeedingPlan(_baby);
-            Console.WriteLine(_feedingPlan.feeding);
+            Console.WriteLine(_feedingPlan.Feeding);
             Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
         }
-        private static void getVaccinationPlan()
+        private static void GetVaccinationPlan()
         {
             _vaccinationPlan = new Vaccinations(_baby);
-            Console.WriteLine(_vaccinationPlan.vaccinationPlan);
+            Console.WriteLine(_vaccinationPlan.VaccinationPlan);
             Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
 

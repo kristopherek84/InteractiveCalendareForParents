@@ -60,8 +60,8 @@ namespace InteractiveCalendar
             if (name!="" && birthday != "")
             {
                 
-                a.initializeBaby(name,DateTime.Parse( birthday));
-                displayBox.Text = a.getBabysAge();
+                a.InitializeBaby(name,DateTime.Parse( birthday));
+                displayBox.Text = a.GetBabysAge();
                 listBox.IsEnabled = true;
                 label.Content = "";
                 label1.Content = "";
@@ -83,32 +83,32 @@ namespace InteractiveCalendar
         private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
         {
             displayBox.Text = "";
-            option = a.getFeedingPlan(isBreastfead);
+            option = a.GetFeedingPlan(isBreastfead);
         }
 
         private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
         {
             displayBox.Text = "";
             //checkBox.IsEnabled = true;
-            option= a.getVaccinationPlan(isVaccinated, vaccinatedForFree, vaccinCombo);
+            option= a.GetVaccinationPlan(isVaccinated, vaccinatedForFree, vaccinCombo);
         }
 
         private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
         {
             displayBox.Text = "";
-            option = a.getBabysAge();
+            option = a.GetBabysAge();
         }
 
         private void ListBoxItem_Selected_3(object sender, RoutedEventArgs e)
         {
             displayBox.Text = "";
-            option = a.getNearestDoctorsAppointment();
+            option = a.GetNearestDoctorsAppointment();
         }
 
         private void ListBoxItem_Selected_4(object sender, RoutedEventArgs e)
         {
             displayBox.Text = "";
-            option = a.getBabysSkills();
+            option = a.GetBabysSkills();
         }
 
         private void checkBox_Checked(object sender, RoutedEventArgs e)

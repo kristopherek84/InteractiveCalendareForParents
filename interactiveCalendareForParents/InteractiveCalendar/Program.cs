@@ -10,42 +10,56 @@ namespace InteractiveCalendar
 {
      class Program
     {
-        static Baby _baby;
+       static Baby _baby;
+        //public Baby _baby { get; set; }
         static FeedingPlan _feedingPlan;
         static Vaccinations _vaccinationPlan;
         static DoctorsAppointments _doctorsAppointment;
         static Skills _babysSkills;
-        public static string name = "Interactive Callendar For Parents Of Newborns and Infint Children";
-        
+        public static string Name = "Interactive Callendar For Parents Of Newborns and Infint Children";
 
-        public  void initializeBaby(string Name, DateTime birthday)
+        public Program(Baby baby)
         {
-            _baby = new Baby(Name,birthday);    
+            _baby = baby;
         }
-        public  string getBabysAge()
+
+        public Program()
+        {
+            
+        }
+        public void InitializeBaby(string name, DateTime birthday)
+        {
+            _baby = new Baby(name,birthday);    
+        }
+
+        public int GetAge()
+        {
+            return _baby.AgeInMonths;
+        }
+        public string GetBabysAge()
         {
             return "The Baby's Name is " + _baby.Name + ", its " + _baby.AgeInMonths + " months old, witch is " + _baby.AgeInWeeks + " weeks old";
         }
-        public  string getFeedingPlan(bool isBreastfead)
+        public  string GetFeedingPlan(bool isBreastfead)
         {
             _feedingPlan = new FeedingPlan(_baby, isBreastfead);
-            return _feedingPlan.feeding;
+            return _feedingPlan.Feeding;
         }
-        public  string getVaccinationPlan(bool isVaccinated, bool vaccinatedForFree, bool vaccinCombo)
+        public  string GetVaccinationPlan(bool isVaccinated, bool vaccinatedForFree, bool vaccinCombo)
         {
           
             _vaccinationPlan = new Vaccinations(_baby,isVaccinated,vaccinatedForFree,vaccinCombo);
-             return _vaccinationPlan.vaccinationPlan;
+             return _vaccinationPlan.VaccinationPlan;
         }
-        public  string getNearestDoctorsAppointment()
+        public  string GetNearestDoctorsAppointment()
         {
             _doctorsAppointment = new DoctorsAppointments(_baby);
-            return _doctorsAppointment.nearestDoctorsAppointment;
+            return _doctorsAppointment.NearestDoctorsAppointment;
         }
-        public  string getBabysSkills()
+        public  string GetBabysSkills()
         {
             _babysSkills = new Skills(_baby);
-            return _babysSkills.babySkills;
+            return _babysSkills.BabySkills;
         }
 
        

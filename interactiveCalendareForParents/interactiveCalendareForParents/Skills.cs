@@ -8,19 +8,19 @@ namespace interactiveCalendareForParents
 {
     public class Skills
     {
-        protected Baby _baby;
+        protected Baby Baby;
         private string[] _babySkills;
-        public string babySkills;
+        public string BabySkills;
 
         public Skills(Baby baby)
         {
-            _baby = baby;
-            babySkills= getBabySkills(_baby);
+            Baby = baby;
+            BabySkills= GetBabySkills(Baby);
         }
 
       
 
-        private string getBabySkills(Baby _baby)
+        private string GetBabySkills(Baby _baby)
         {
             _babySkills = new string[] {
                 "It's time to feed! From the suggested menu I choose your food. \nOops, you will probably have to look in the diaper. Oh yes, now OK. \nTime to nap. Just be with me.",
