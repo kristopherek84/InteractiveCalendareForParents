@@ -92,5 +92,7 @@ namespace InteractiveCalendar
         {
             IsVaccinated = !IsVaccinated;
         }
+
+       
     }
 }

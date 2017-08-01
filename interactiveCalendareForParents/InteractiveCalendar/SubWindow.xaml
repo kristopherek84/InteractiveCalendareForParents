@@ -22,7 +22,6 @@
         <RadioButton x:Name="radioButton1" Content="Paid Vaccine Combo" HorizontalAlignment="Left" Height="18" Margin="197,76,0,0" VerticalAlignment="Top" Width="143" Checked="radioButton1_Checked"/>
         <CheckBox x:Name="checkBox1" Content="Is Breastfead" HorizontalAlignment="Left" Height="25" Margin="197,31,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox1_Checked"/>
         <TextBox x:Name="displayBox" HorizontalAlignment="Left" Height="144" Margin="10,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="580"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="300" Margin="-310,-25,0,0" VerticalAlignment="Top" Width="290"/>
 
     </Grid>
 </Window>
