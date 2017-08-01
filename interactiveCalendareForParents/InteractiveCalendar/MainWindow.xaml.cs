@@ -23,8 +23,11 @@ namespace InteractiveCalendar
     {
         string _name="";
         string _birthday = "";
-       
-        bool _isVaccinated=false,_vaccinatedForFree=false, _vaccinCombo=false, _isBreastfead=false;
+
+        public static bool IsVaccinated { get; set; }
+        public static bool VaccinatedForFree { get; set; }
+        public static bool VaccinCombo { get; set; }
+        public static bool IsBreastfead { get; set; }
 
 
         public static Program A;
@@ -66,22 +69,27 @@ namespace InteractiveCalendar
         }
         private void checkBox_Checked(object sender, RoutedEventArgs e)
         {
-            _isVaccinated = !_isVaccinated;
+            IsVaccinated = !IsVaccinated;
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
         private void checkBox1_Checked(object sender, RoutedEventArgs e)
         {
-            _isBreastfead = !_isBreastfead;
+            IsBreastfead = !IsBreastfead;
         }
 
         private void radioButton_Checked(object sender, RoutedEventArgs e)
         {
-            _vaccinatedForFree = !_vaccinatedForFree;
+            VaccinatedForFree = !VaccinatedForFree;
         }
 
         private void radioButton1_Checked(object sender, RoutedEventArgs e)
         {
-            _vaccinCombo = !_vaccinCombo;
+            VaccinCombo = !VaccinCombo;
         }
     }
 }

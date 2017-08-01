@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InteractiveCalendar"
         mc:Ignorable="d"
-        Title="Interactive Callendar For Parents Of Newborns and Infint Children" Height="231" Width="439">
+        Title="Interactive Callendar For Parents Of Newborns and Infint Children" Height="236" Width="439">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
