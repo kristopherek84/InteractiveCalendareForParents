@@ -21,19 +21,18 @@ namespace InteractiveCalendar
     /// </summary>
     public partial class MainWindow : Window
     {
-        string name="";
-        string birthday = "";
-        string option = "";
-        
-        bool isVaccinated=false,vaccinatedForFree=false, vaccinCombo=false, isBreastfead=false;
+        string _name="";
+        string _birthday = "";
+       
+        bool _isVaccinated=false,_vaccinatedForFree=false, _vaccinCombo=false, _isBreastfead=false;
 
 
-        static Program a;
+        public static Program A;
         public MainWindow()
         {
             InitializeComponent();
-            a = new Program();
-            listBox.IsEnabled=false;
+            A = new Program();
+           
             textBox.IsEnabled = false;
             datePicker.IsEnabled = false;
 
@@ -55,80 +54,34 @@ namespace InteractiveCalendar
         
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-           name = textBox.Text;
-          birthday = datePicker.Text;
-            if (name!="" && birthday != "")
+           _name = textBox.Text;
+          _birthday = datePicker.Text;
+            if (_name!="" && _birthday != "")
             {
-                
-                a.InitializeBaby(name,DateTime.Parse( birthday));
-                displayBox.Text = a.GetBabysAge();
-                listBox.IsEnabled = true;
-                label.Content = "";
-                label1.Content = "";
-            }
-           
-            
-        }
-
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
+               A.InitializeBaby(_name,DateTime.Parse( _birthday));
+                SubWindow subWindow = new SubWindow();
+                subWindow.Show();
+             }
            
         }
-
-        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            displayBox.Text = option;
-        }
-
-        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
-        {
-            displayBox.Text = "";
-            option = a.GetFeedingPlan(isBreastfead);
-        }
-
-        private void ListBoxItem_Selected_1(object sender, RoutedEventArgs e)
-        {
-            displayBox.Text = "";
-            //checkBox.IsEnabled = true;
-            option= a.GetVaccinationPlan(isVaccinated, vaccinatedForFree, vaccinCombo);
-        }
-
-        private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
-        {
-            displayBox.Text = "";
-            option = a.GetBabysAge();
-        }
-
-        private void ListBoxItem_Selected_3(object sender, RoutedEventArgs e)
-        {
-            displayBox.Text = "";
-            option = a.GetNearestDoctorsAppointment();
-        }
-
-        private void ListBoxItem_Selected_4(object sender, RoutedEventArgs e)
-        {
-            displayBox.Text = "";
-            option = a.GetBabysSkills();
-        }
-
         private void checkBox_Checked(object sender, RoutedEventArgs e)
         {
-            isVaccinated = !isVaccinated;
+            _isVaccinated = !_isVaccinated;
         }
 
         private void checkBox1_Checked(object sender, RoutedEventArgs e)
         {
-            isBreastfead = !isBreastfead;
+            _isBreastfead = !_isBreastfead;
         }
 
         private void radioButton_Checked(object sender, RoutedEventArgs e)
         {
-            vaccinatedForFree = !vaccinatedForFree;
+            _vaccinatedForFree = !_vaccinatedForFree;
         }
 
         private void radioButton1_Checked(object sender, RoutedEventArgs e)
         {
-            vaccinCombo = !vaccinCombo;
+            _vaccinCombo = !_vaccinCombo;
         }
     }
 }

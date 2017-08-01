@@ -8,12 +8,12 @@ using interactiveCalendareForParents;
 
 namespace InteractiveCalendar
 {
-     class Program
+     public class Program
     {
        static Baby _baby;
         //public Baby _baby { get; set; }
-        static FeedingPlan _feedingPlan;
-        static Vaccinations _vaccinationPlan;
+        static FeedingPlanWindow _feedingPlan;
+        static VaccinationWindow _vaccinationPlan;
         static DoctorsAppointments _doctorsAppointment;
         static Skills _babysSkills;
         public static string Name = "Interactive Callendar For Parents Of Newborns and Infint Children";
@@ -42,24 +42,24 @@ namespace InteractiveCalendar
         }
         public  string GetFeedingPlan(bool isBreastfead)
         {
-            _feedingPlan = new FeedingPlan(_baby, isBreastfead);
-            return _feedingPlan.Feeding;
+            _feedingPlan = new FeedingPlanWindow(_baby, isBreastfead);
+            return _feedingPlan.GetBabyInfo();
         }
         public  string GetVaccinationPlan(bool isVaccinated, bool vaccinatedForFree, bool vaccinCombo)
         {
           
-            _vaccinationPlan = new Vaccinations(_baby,isVaccinated,vaccinatedForFree,vaccinCombo);
-             return _vaccinationPlan.VaccinationPlan;
+            _vaccinationPlan = new VaccinationWindow(_baby,isVaccinated,vaccinatedForFree,vaccinCombo);
+             return _vaccinationPlan.GetBabyInfo();
         }
         public  string GetNearestDoctorsAppointment()
         {
             _doctorsAppointment = new DoctorsAppointments(_baby);
-            return _doctorsAppointment.NearestDoctorsAppointment;
+            return _doctorsAppointment.GetBabyInfo();
         }
         public  string GetBabysSkills()
         {
             _babysSkills = new Skills(_baby);
-            return _babysSkills.BabySkills;
+            return _babysSkills.GetBabyInfo();
         }
 
        

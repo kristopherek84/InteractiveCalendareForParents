@@ -5,36 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InteractiveCalendar"
         mc:Ignorable="d"
-        Title="Interactive Callendar For Parents Of Newborns and Infint Children" Height="350" Width="525">
+        Title="Interactive Callendar For Parents Of Newborns and Infint Children" Height="231" Width="439">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Menu x:Name="menu" HorizontalAlignment="Left" Height="3" Margin="517,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="0"/>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="3" Margin="517,160,0,0" VerticalAlignment="Top" Width="0"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="28" Margin="174,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" TextChanged="textBox_TextChanged"/>
         <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Height="33" Margin="174,78,0,0" VerticalAlignment="Top" Width="143"/>
 
-        <Button x:Name="button2" Content="Enter" HorizontalAlignment="Left" Height="36" Margin="10,0,0,0" VerticalAlignment="Top" Width="91" Click="button2_Click" Grid.Row="1"/>
-        <TextBox x:Name="displayBox" HorizontalAlignment="Left" Height="113" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="497" Grid.Row="1"/>
-        <Menu x:Name="menu1" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="515" Margin="2,0,0,0">
+        <Button x:Name="button2" Content="Enter" HorizontalAlignment="Left" Height="36" Margin="10,160,0,0" VerticalAlignment="Top" Width="91" Click="button2_Click"/>
+        <Menu x:Name="menu1" HorizontalAlignment="Left" Height="45" VerticalAlignment="Top" Width="431">
             <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="74" Click="button_Click" RenderTransformOrigin="-1.763,-2.186"/>
             <Button x:Name="button1" Content="Quit" HorizontalAlignment="Left" Height="37" VerticalAlignment="Top" Width="93" Click="button1_Click"/>
         </Menu>
         <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="28" Margin="10,52,0,0" VerticalAlignment="Top" Width="146"/>
         <Label x:Name="label1" Content="" HorizontalAlignment="Left" Height="51" Margin="10,85,0,0" VerticalAlignment="Top" Width="146"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="84" Margin="358,52,0,0" VerticalAlignment="Top" Width="149" SelectionChanged="listBox_SelectionChanged">
-            <ListBoxItem Content="Feeding Plan" Selected="ListBoxItem_Selected"/>
-            <ListBoxItem Content="Vaccinations" Selected="ListBoxItem_Selected_1"/>
-            <ListBoxItem Content="Doctors Appointments" Selected="ListBoxItem_Selected_3"/>
-            <ListBoxItem Content="Baby's Age" Selected="ListBoxItem_Selected_2"/>
-            <ListBoxItem Content="What can my baby do?" Selected="ListBoxItem_Selected_4"/>
-        </ListBox>
-        <CheckBox x:Name="checkBox" Content="Is Vaccinated&#xD;&#xA;" HorizontalAlignment="Left" Height="85" Margin="174,111,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox_Checked" Grid.RowSpan="2"/>
-        <RadioButton x:Name="radioButton" HorizontalAlignment="Left" Height="20" Margin="174,0,0,0" VerticalAlignment="Top" Width="143" Content="Is vaccinated for free" Checked="radioButton_Checked" Grid.Row="1"/>
-        <RadioButton x:Name="radioButton1" Content="Paid Vaccine Combo" HorizontalAlignment="Left" Height="18" Margin="174,18,0,0" VerticalAlignment="Top" Width="143" Grid.Row="1" Checked="radioButton1_Checked"/>
-        <CheckBox x:Name="checkBox1" Content="Is Breastfead" HorizontalAlignment="Left" Height="25" Margin="174,130,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox1_Checked"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="350" Margin="522,-25,-473,-5" Grid.RowSpan="2" VerticalAlignment="Top" Width="468"/>
+        <CheckBox x:Name="checkBox" Content="Is Vaccinated&#xD;&#xA;" HorizontalAlignment="Left" Height="85" Margin="174,111,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox_Checked"/>
+        <RadioButton x:Name="radioButton" HorizontalAlignment="Left" Height="20" Margin="288,111,0,0" VerticalAlignment="Top" Width="143" Content="Is vaccinated for free" Checked="radioButton_Checked"/>
+        <RadioButton x:Name="radioButton1" Content="Paid Vaccine Combo" HorizontalAlignment="Left" Height="18" Margin="288,131,0,0" VerticalAlignment="Top" Width="143" Checked="radioButton1_Checked"/>
+        <CheckBox x:Name="checkBox1" Content="Is Breastfead" HorizontalAlignment="Left" Height="25" Margin="174,131,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox1_Checked"/>
 
 
     </Grid>

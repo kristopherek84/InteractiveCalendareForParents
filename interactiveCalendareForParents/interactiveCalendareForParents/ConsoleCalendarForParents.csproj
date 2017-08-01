@@ -49,6 +49,7 @@
     <Compile Include="Baby.cs" />
     <Compile Include="DoctorsAppointments.cs" />
     <Compile Include="FeedingPlan.cs" />
+    <Compile Include="IBabyInfo.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

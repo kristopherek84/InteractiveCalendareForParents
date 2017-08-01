@@ -6,30 +6,26 @@ using System.Threading.Tasks;
 
 namespace interactiveCalendareForParents
 {
-    public class Vaccinations
+    public class Vaccinations: IBabyInfo
     {
-       private bool _isVaccinated;
-        private bool _vaccinatedForFree;
-       private  bool _vaccinCombo;
+       protected bool _isVaccinated;
+        protected bool _vaccinatedForFree;
+       protected  bool _vaccinCombo;
         //  bool _extraVaccinatians;
         protected Baby Baby;
-        public string VaccinationPlan = "";
+        protected string VaccinationPlan = "";
 
+        public Vaccinations()
+        {
+            
+        }
         public Vaccinations(Baby baby)
         {
             Baby = baby;
             AskForVaccinationPlan(Baby);
          
         }
-        public Vaccinations(Baby baby,bool isVaccinated,bool vaccinatedForFree, bool vaccinCombo)
-        {
-            Baby = baby;
-            _isVaccinated = isVaccinated;
-            _vaccinatedForFree = vaccinatedForFree;
-            _vaccinCombo = vaccinCombo;
-            if (!_isVaccinated) VaccinationPlan += "Little baby coffins are not cheaper then free vaccines!!!!\n";
-            ChooseVaccinationPlan(baby);
-        }
+       
         private void AskForVaccinationPlan(Baby baby)
         {
             AskIsVaccinated();
@@ -54,7 +50,7 @@ namespace interactiveCalendareForParents
             else if (answer2 == "P" || answer2 == "p") { _vaccinCombo = true; _vaccinatedForFree = false; }
             else { Console.WriteLine("Please try again."); AskWhatVaccinationPlan(); }
         }
-        private void ChooseVaccinationPlan(Baby baby)
+        protected void ChooseVaccinationPlan(Baby baby)
         {
             if (baby.AgeInMonths > 5 && baby.AgeInMonths <= 7 && _vaccinatedForFree)
             { VaccinationPlan += "At the age of 7 months " + baby.Name + " shoud receve third dose of vaccine against hepatitis B."; }
@@ -84,6 +80,11 @@ baby.Name +
             else if (baby.AgeInMonths == 3 && _vaccinCombo) VaccinationPlan += "Between the age of 3 and 4 months " + baby.Name + " should receve the second 6 in 1 vaccine.";
             else if (baby.AgeInMonths <= 2 && _vaccinCombo) VaccinationPlan += "At the age of 2 months " + baby.Name + " should receve the first 6 in 1 vaccine.";
             else VaccinationPlan += baby.Name + " is older then 7 months and should be past the first year vaccination plan.";
+        }
+
+        public string GetBabyInfo()
+        {
+            return VaccinationPlan;
         }
     }
 }

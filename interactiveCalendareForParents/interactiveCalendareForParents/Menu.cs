@@ -90,7 +90,7 @@ namespace interactiveCalendareForParents
         private static void GetBabysSkills()
         {
             _babysSkills = new Skills(_baby);
-            Console.WriteLine(_babysSkills.BabySkills);
+            Console.WriteLine(_babysSkills.GetBabyInfo());
             Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
         }
@@ -98,7 +98,7 @@ namespace interactiveCalendareForParents
         private static void NearestDoctorsAppointment()
         {
             _doctorsAppointment = new DoctorsAppointments(_baby);
-            Console.WriteLine(_doctorsAppointment.NearestDoctorsAppointment);
+            Console.WriteLine(_doctorsAppointment.GetBabyInfo());
             Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
 
@@ -134,14 +134,14 @@ namespace interactiveCalendareForParents
         private static void ReadFeedingDetails()
         {
             _feedingPlan = new FeedingPlan(_baby);
-            Console.WriteLine(_feedingPlan.Feeding);
+            Console.WriteLine(_feedingPlan.GetBabyInfo());
             Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
         }
         private static void GetVaccinationPlan()
         {
             _vaccinationPlan = new Vaccinations(_baby);
-            Console.WriteLine(_vaccinationPlan.VaccinationPlan);
+            Console.WriteLine(_vaccinationPlan.GetBabyInfo());
             Console.WriteLine("Press enter to continue.");
             Console.ReadLine();
 

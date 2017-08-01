@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace interactiveCalendareForParents
 {
-    public class Skills
+    public class Skills:IBabyInfo
     {
         protected Baby Baby;
         private string[] _babySkills;
-        public string BabySkills;
+        protected string BabySkills;
 
         public Skills(Baby baby)
         {
@@ -20,7 +20,7 @@ namespace interactiveCalendareForParents
 
       
 
-        private string GetBabySkills(Baby _baby)
+        private string GetBabySkills(Baby baby)
         {
             _babySkills = new string[] {
                 "It's time to feed! From the suggested menu I choose your food. \nOops, you will probably have to look in the diaper. Oh yes, now OK. \nTime to nap. Just be with me.",
@@ -36,7 +36,12 @@ namespace interactiveCalendareForParents
                 "I invite you to an acrobatic show. Success: sit down, get up, take a few steps straight holding on to something, \na few sideways, a couple on my knees :-) Now a wooden disc on a stick hops ... one more and another. \nWhat do you think about that?Kiss. No, don't take my book, I'm watching it. \nAlright, I'm done. Are going for a walk? Just do not dress me thick.\nLater I'll have those tiny itchy pustules.How do you call them? Oh, pots.\nMake me a sandwich with roast meat!",
                 "Time to check my achievements :-) I eat with a spoon. Okay, sometimes the soup still land on the table, but ... \nI have some teeth! Haven't you made a mistake? Count again.\nI pee on a potty, although I still prefer a diaper. I say: mom, dad, baba. \nI know where on the picture is a dog and a cow. What? Am I praising to much? \nWell, maybe. Uuuuu, what's this? birthday cake! Blow, how to blow? I love you most in the world :-)"
             };
-            return _babySkills[_baby.AgeInMonths];
+            return _babySkills[Baby.AgeInMonths];
+        }
+
+        public string GetBabyInfo()
+        {
+            return BabySkills;
         }
     }
 }
