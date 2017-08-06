@@ -1,0 +1,39 @@
+Link do filmiku:
+
+
+Interaktywny kalendarz dla rodziców dzieci od 0-12miesiêcy.
+Aplikacja pisana jest po angielsku, zarówno kod jak i komunikaty dla u¿ytkownika.
+Aplikacja stworzona w dwóch wersjach - consolowa i okienkowa WPF.
+
+Consolowa:
+Program.cs wywo³uje statyczn¹ metodê klasy Menu.cs która wyœwietla menu pozwalaj¹ce rozpocz¹æ pracê przez podanie danych dziecka 
+lub opuszczenie programu. Po wybraniu opcji "New Baby" wywo³ywana jest metoda InitializeBaby() która tworzy obiekt klasy Baby.cs 
+poprzez pytanie u¿ytkownika o Imiê dziecka i datê urodzenia, które to dane s¹ wykorzytywane przez konstruktor klasy Baby.cs. 
+Przyjmowanie wartoœci daty urodzenia jest opatrzone obs³ug¹ try/catch. Nastêpnie wyœwietlane jest nowe menu pozwalaj¹ce wybraæ jedn¹
+z 7 opcji:ponowne podanie danych dziecka,wiek dziecka w miesi¹cach i tygodniach, plan ¿ywieniowy na dany wiek, najbli¿szy termin 
+szczepienia,najbli¿sza wizyta lekarska wynikaj¹ca ze schematu wizyt dla dzieci w pierwszym roku ¿ycia, opis co dziecko powinno 
+potrafiæ oraz opcja wyjœcia z programu. Ka¿d¹ z tych opcji(poza wyjœcie z programu) wywo³uje stworzenie obiektu odpowiedniej klasy,
+która przyjmuje obiekt klasy Baby.cs i przypisuje do w³asnego pola, by wykorzystaæ pola obiektu Baby.cs do wytworzenia odpowiedniego
+komunikatu zwrotnego. Pozosta³e klasy implementuj¹ interfejs IBabyInfo, która eksponuje jedn¹ metodê GetBabyInfo(). Interfejs ten 
+zosta³ zaimplementowany dla ujednolicenia wywo³añ informacji zwrotnej. Obiekt klasy FeedingPlan.cs wypytuje u¿ytkownika o to czy 
+dziecko jest karmione piersi¹ czy nie i na podstawie tej informacji oraz wieku i imienia dziecka wykorzytuj¹c if statmenty generuje 
+string z proponowanym schematem ¿ywienia.Obiekt klasy DoctorsAppointments.cs wykorzytuje wiek i imiê dziecka oraz if statmenty do 
+wygenerowania string z informacj¹ o nadchodz¹cej wizycie lekarskiej i tym co podczas niej ma nast¹piæ. Obiek klasy Vaccinations 
+wypytuje u¿ytkownika o to czy dziecko bêdzie szczepione oraz czy schemat szczepieñ bêdzie bezp³atny czy p³atny i na podstawie tych
+informacji, danych dziecka oraz if statmentów generuje string z informacj¹a o najbli¿szym szczepieniu. Obiekt klasy Skills.cs 
+wykorzystuje dane dziecka i tablicê stringów by dobraæ odpowiedni¹ informacjê o potencjalnych umiejêtnoœciach dziecka.
+
+Aplikacja okienkowa:
+Program.cs wyœwietla MainWindow z guzikami Start i Quit oraz nieaktywnymi pozosta³ymi elementami okienka. Quit zamyka aplikacjê.
+Start powoduje wyœwietlenie odpowiednich zapytañ na label i label1 pytaj¹c siê u¿ytkownika o imiê i daty urodzenia siê dziecka. Do 
+pobrania daty urodzin wykorzysta³em DatePicker który za³atwia problem niew³aœciwie wprowadzonej daty. Te dane s¹ wykorzystywane do 
+stworzenia obiektu klasy Baby.cs, dodatkowo u¿ytkownik mo¿e zaznaczyæ checkbox odnoœnie karmienia piersi¹, czy dziecko jest szczepione
+oraz radiobutton odnoœnie wyboru czy schemat szczepienia p³atny czy darmowy. Nastêpnie po naciœniêciu guzika Enter otwiera nam siê 
+drugie okienko z listboxem z opcjami jak w menu konsolowym, tymi samymi checkboxami i radiobuttonami oraz textboxem gdzie wyœwietlana
+jest po¿¹dana informacja. Dla rozdzielenia odpowiedzialnoœci dla aplikacji okienkowej stworzy³em klasy FeedingPlanWindow.cs która dziedziczy
+po FeedingPlan.cs oraz VaccinationWindow.cs która dziedziczy po Vaccination.cs. Klasy te maj¹ konstruktory przyjmuj¹ce wartoœci bool
+z odpowiednich checkboxów i radiobuttonów. Obiekt klasy FeedingPlanWindow wykorzystuje s³ownik do wyboru odpowiedniego string z informacj¹
+o planie ¿ywieniowym, w sumie tylko po to by pokazaæ ¿e tak te¿ mo¿na. Obiekt klasy VaccinationWindow wykorzystuje metodê klasy bazowej
+do wygenerowania odpowiedniego komunikatu string. 
+
+Do aplikacji okienkowej napisa³em szereg Unit testów by zweryfikowaæ ¿e metody w niej wykorzystywane dzia³aj¹ poprawnie.
