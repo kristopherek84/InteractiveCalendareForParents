@@ -29,8 +29,13 @@ namespace interactiveCalendareForParents
         private void AskForVaccinationPlan(Baby baby)
         {
             AskIsVaccinated();
+            
+            if (!_isVaccinated)
+            {
+                VaccinationPlan += "Little baby coffins are not cheaper then free vaccines!!!!\n";
+                return;
+            }
             AskWhatVaccinationPlan();
-            if (!_isVaccinated) VaccinationPlan += "Little baby coffins are not cheaper then free vaccines!!!!\n";
             ChooseVaccinationPlan(baby);
         }
         
@@ -52,7 +57,11 @@ namespace interactiveCalendareForParents
         }
         protected void ChooseVaccinationPlan(Baby baby)
         {
-            if (baby.AgeInMonths > 5 && baby.AgeInMonths <= 7 && _vaccinatedForFree)
+            if (_isVaccinated && !_vaccinCombo && !_vaccinatedForFree)
+            {
+                VaccinationPlan += "Choose Vaccination Plan. Free or Payed Combo version.";
+            }
+            else if (baby.AgeInMonths > 5 && baby.AgeInMonths <= 7 && _vaccinatedForFree)
             { VaccinationPlan += "At the age of 7 months " + baby.Name + " shoud receve third dose of vaccine against hepatitis B."; }
             else if (baby.AgeInMonths <= 5 && baby.AgeInMonths > 3 && _vaccinatedForFree)
             {

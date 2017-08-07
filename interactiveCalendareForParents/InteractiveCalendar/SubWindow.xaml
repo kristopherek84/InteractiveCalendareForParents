@@ -17,7 +17,7 @@
             <ListBoxItem Content="Doctors Appointments" Selected="ListBoxItem_Selected_3"/>
             <ListBoxItem Content="What can my baby do?" Selected="ListBoxItem_Selected_4"/>
         </ListBox>
-        <CheckBox x:Name="checkBox_Copy" Content="Is Vaccinated&#xA;" HorizontalAlignment="Left" Height="85" Margin="197,12,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox_Checked"/>
+        <CheckBox x:Name="checkBox_Copy" Content="Is Vaccinated&#xA;" HorizontalAlignment="Left" Height="19" Margin="197,12,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox_Checked"/>
         <RadioButton x:Name="radioButton" HorizontalAlignment="Left" Height="20" Margin="197,56,0,0" VerticalAlignment="Top" Width="143" Content="Is vaccinated for free" Checked="radioButton_Checked"/>
         <RadioButton x:Name="radioButton1" Content="Paid Vaccine Combo" HorizontalAlignment="Left" Height="18" Margin="197,76,0,0" VerticalAlignment="Top" Width="143" Checked="radioButton1_Checked"/>
         <CheckBox x:Name="checkBox1" Content="Is Breastfead" HorizontalAlignment="Left" Height="25" Margin="197,31,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox1_Checked"/>

@@ -21,10 +21,10 @@
         </Menu>
         <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="28" Margin="10,52,0,0" VerticalAlignment="Top" Width="146"/>
         <Label x:Name="label1" Content="" HorizontalAlignment="Left" Height="51" Margin="10,85,0,0" VerticalAlignment="Top" Width="146"/>
-        <CheckBox x:Name="checkBox" Content="Is Vaccinated&#xD;&#xA;" HorizontalAlignment="Left" Height="38" Margin="174,111,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox_Checked"/>
+        <CheckBox x:Name="checkBox" Content="Is Vaccinated&#xD;&#xA;" HorizontalAlignment="Left" Height="15" Margin="174,111,0,0" VerticalAlignment="Top" Width="91" Checked="checkBox_Checked"/>
         <RadioButton x:Name="radioButton" HorizontalAlignment="Left" Height="20" Margin="288,111,0,0" VerticalAlignment="Top" Width="143" Content="Is vaccinated for free" Checked="radioButton_Checked"/>
         <RadioButton x:Name="radioButton1" Content="Paid Vaccine Combo" HorizontalAlignment="Left" Height="18" Margin="288,131,0,0" VerticalAlignment="Top" Width="143" Checked="radioButton1_Checked"/>
-        <CheckBox x:Name="checkBox1" Content="Is Breastfead" HorizontalAlignment="Left" Height="25" Margin="174,131,0,0" VerticalAlignment="Top" Width="143" Checked="checkBox1_Checked"/>
+        <CheckBox x:Name="checkBox1" Content="Is Breastfead" HorizontalAlignment="Left" Height="18" Margin="174,131,0,0" VerticalAlignment="Top" Width="91" Checked="checkBox1_Checked"/>
 
 
     </Grid>

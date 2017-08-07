@@ -34,6 +34,11 @@ namespace InteractiveCalendar
         public MainWindow()
         {
             InitializeComponent();
+            IsVaccinated = false;
+            VaccinatedForFree = false;
+            VaccinCombo = false;
+            IsBreastfead = false;
+          
             A = new Program();
            
             textBox.IsEnabled = false;
@@ -64,7 +69,8 @@ namespace InteractiveCalendar
                A.InitializeBaby(_name,DateTime.Parse( _birthday));
                 SubWindow subWindow = new SubWindow();
                 subWindow.Show();
-             }
+                
+            }
            
         }
         private void checkBox_Checked(object sender, RoutedEventArgs e)

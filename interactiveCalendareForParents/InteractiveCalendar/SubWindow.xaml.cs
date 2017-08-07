@@ -27,22 +27,30 @@ namespace InteractiveCalendar
         public bool VaccinatedForFree { get; set; }
         public bool VaccinCombo { get; set; }
         public bool IsBreastfead { get; set; }
-
+        public static Program A;
 
 
         public SubWindow()
         {
             InitializeComponent();
+            A = MainWindow.A;
             IsVaccinated = MainWindow.IsVaccinated;
+            if (IsVaccinated) checkBox_Copy.IsChecked = true;
             VaccinatedForFree = MainWindow.VaccinatedForFree;
+            if (VaccinatedForFree) radioButton.IsChecked = true;
             VaccinCombo = MainWindow.VaccinCombo;
+            if (VaccinCombo) radioButton1.IsChecked = true;
             IsBreastfead = MainWindow.IsBreastfead;
+            if (IsBreastfead) checkBox1.IsChecked = true;
             listBox.IsEnabled = true;
 
         }
         private void checkBox1_Checked(object sender, RoutedEventArgs e)
         {
-            IsBreastfead = !IsBreastfead;
+            
+            
+                IsBreastfead = !IsBreastfead;
+            MainWindow.IsBreastfead = IsBreastfead;
         }
 
         private void ListBoxItem_Selected_2(object sender, RoutedEventArgs e)
@@ -80,17 +88,28 @@ namespace InteractiveCalendar
         }
         private void radioButton1_Checked(object sender, RoutedEventArgs e)
         {
-            VaccinCombo = !VaccinCombo;
+           
+                VaccinCombo = !VaccinCombo;
+            
+            MainWindow.VaccinCombo = VaccinCombo;
         }
 
         private void radioButton_Checked(object sender, RoutedEventArgs e)
         {
-            VaccinatedForFree = !VaccinatedForFree;
+           
+          
+                VaccinatedForFree = !VaccinatedForFree;
+            
+            MainWindow.VaccinatedForFree = VaccinatedForFree;
         }
         
         private void checkBox_Checked(object sender, RoutedEventArgs e)
         {
-            IsVaccinated = !IsVaccinated;
+           
+            
+                IsVaccinated = !IsVaccinated;
+           
+            MainWindow.IsVaccinated = IsVaccinated;
         }
 
        

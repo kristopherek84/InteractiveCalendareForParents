@@ -20,7 +20,7 @@ namespace InteractiveCalendar
                 VaccinationPlan += "Little baby coffins are not cheaper then free vaccines!!!!\n";
                 return;
             }
-            base.ChooseVaccinationPlan(baby);
+            ChooseVaccinationPlan(baby);
         }
 
     }
