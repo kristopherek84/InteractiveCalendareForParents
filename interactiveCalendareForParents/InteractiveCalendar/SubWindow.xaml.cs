@@ -35,13 +35,29 @@ namespace InteractiveCalendar
             InitializeComponent();
             A = MainWindow.A;
             IsVaccinated = MainWindow.IsVaccinated;
-            if (IsVaccinated) checkBox_Copy.IsChecked = true;
+            if (IsVaccinated)
+            {
+                checkBox_Copy.IsChecked = true;
+                IsVaccinated = true;
+            }
             VaccinatedForFree = MainWindow.VaccinatedForFree;
-            if (VaccinatedForFree) radioButton.IsChecked = true;
+            if (VaccinatedForFree)
+            {
+                radioButton.IsChecked = true;
+                VaccinatedForFree = true;
+            }
             VaccinCombo = MainWindow.VaccinCombo;
-            if (VaccinCombo) radioButton1.IsChecked = true;
+            if (VaccinCombo)
+            {
+                radioButton1.IsChecked = true;
+                VaccinCombo = true;
+            }
             IsBreastfead = MainWindow.IsBreastfead;
-            if (IsBreastfead) checkBox1.IsChecked = true;
+            if (IsBreastfead)
+            {
+                checkBox1.IsChecked = true;
+                IsBreastfead = true;
+            }
             listBox.IsEnabled = true;
 
         }
